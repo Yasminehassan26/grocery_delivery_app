@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_delivery_app/views/widgets/text_widget.dart';
-import '../widgets/login_widget.dart';
+import 'widgets/login_widget.dart';
 
-class LoginScreen extends StatelessWidget {
-  LoginScreen({Key? key}) : super(key: key);
-  
+class LoginPage extends StatelessWidget {
+  LoginPage({Key? key}) : super(key: key);
+  static const routeName = '/login';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

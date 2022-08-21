@@ -36,7 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   cloud_firestore: ^3.4.4
   intl: ^0.17.0
-  flutter_native_splash: ^2.0.1+1
+  # flutter_native_splash: ^2.0.1+1
   firebase_auth: ^3.6.3
   provider: ^6.0.3
   carousel_slider: ^4.1.1
@@ -52,9 +52,7 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
 
-# flutter_native_splash: 
-#   # color: "#FFFFFF"
-#   # image: assets/splash.png
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

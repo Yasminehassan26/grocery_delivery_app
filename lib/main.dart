@@ -4,9 +4,9 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 import 'package:grocery_delivery_app/services/authentication_service.dart';
-import 'package:grocery_delivery_app/views/screens/login_screen.dart';
-import 'package:grocery_delivery_app/views/screens/sign_up_screen.dart';
-import 'package:grocery_delivery_app/views/screens/splash_screen.dart';
+import 'package:grocery_delivery_app/views/login_register_pages/login_page.dart';
+import 'package:grocery_delivery_app/views/login_register_pages/registration_page.dart';
+import 'package:grocery_delivery_app/views/splash_page.dart';
 
 Future main() async {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -16,12 +16,6 @@ Future main() async {
   await Firebase.initializeApp();
   runApp(const MyApp());
 }
-
-// Future initialization(BuildContext? context) async {
-//   await Future.delayed(const Duration(seconds: 3), () {
-//     FlutterNativeSplash.remove();
-//   });
-// }
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -40,11 +34,16 @@ class MyApp extends StatelessWidget {
             theme: ThemeData(
               primarySwatch: Colors.blue,
             ),
-            initialRoute: '/',
+            // initialRoute: '/',
+            // routes: {
+            //   '/': (context) => SplashPage(),
+            //   '/login': (context) => LoginPage(),
+            //   '/register': (context) => RegistrationPage(),
+            // },
+            home: SplashPage(),
             routes: {
-              '/': (context) => SplashScreen(),
-              '/login': (context) => LoginScreen(),
-              '/register': (context) => SignUpScreen(),
+              LoginPage.routeName: (ctx) => LoginPage(),
+              RegistrationPage.routeName: (ctx) => RegistrationPage(),
             }));
   }
 }

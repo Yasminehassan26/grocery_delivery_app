@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_delivery_app/views/widgets/register_widget.dart';
+import 'package:grocery_delivery_app/views/login_register_pages/widgets/register_widget.dart';
 
-class SignUpScreen extends StatelessWidget {
-  SignUpScreen({Key? key}) : super(key: key);
-  
+class RegistrationPage extends StatelessWidget {
+  RegistrationPage({Key? key}) : super(key: key);
+  static const routeName = '/register';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,8 +20,6 @@ class SignUpScreen extends StatelessWidget {
           ),
         ),
         body: SingleChildScrollView(
-            padding: const EdgeInsets.all(15),
-            child: RegisterWidget(
-                )));
+            padding: const EdgeInsets.all(15), child: RegisterWidget()));
   }
 }

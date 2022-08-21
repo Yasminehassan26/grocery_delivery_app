@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 class InputWidget extends StatelessWidget {
   final TextEditingController textController;
   final String title;
-  InputWidget(this.textController, this.title);
+  final String message;
+
+  InputWidget(this.textController, this.title,this.message);
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -15,6 +17,9 @@ class InputWidget extends StatelessWidget {
       decoration:  InputDecoration(
       labelText: title,
       ),
+      validator: (value){
+        return value==null?null:message;
+      },
     );
   }
 }

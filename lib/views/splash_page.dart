@@ -1,16 +1,17 @@
 import 'dart:async';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-import 'package:grocery_delivery_app/views/screens/Wrapper_screen.dart';
+import 'package:grocery_delivery_app/views/login_register_pages/Wrapper_page.dart';
 
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+class SplashPage extends StatefulWidget {
+  const SplashPage({Key? key}) : super(key: key);
 
   @override
-  _SplashScreenState createState() => _SplashScreenState();
+  _SplashPageState createState() => _SplashPageState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();

@@ -9,7 +9,7 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xffFFFFFF),
       foregroundColor: Colors.black,
       elevation: 1,
       title: Row(
