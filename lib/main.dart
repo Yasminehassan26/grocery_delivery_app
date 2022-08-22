@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:grocery_delivery_app/models/categories.dart';
+import 'package:grocery_delivery_app/views/Cat/categoryPage.dart';
 import 'package:provider/provider.dart';
 
 import 'package:grocery_delivery_app/services/authentication_service.dart';
@@ -14,11 +16,11 @@ Future main() async {
       statusBarIconBrightness: Brightness.dark));
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +29,7 @@ class MyApp extends StatelessWidget {
           Provider<AuthenticationService>(
             create: (_) => AuthenticationService(),
           ),
+          ChangeNotifierProvider<Categories>.value(value: Categories()),
         ],
         child: MaterialApp(
             debugShowCheckedModeBanner: false,
@@ -34,16 +37,11 @@ class MyApp extends StatelessWidget {
             theme: ThemeData(
               primarySwatch: Colors.blue,
             ),
-            // initialRoute: '/',
-            // routes: {
-            //   '/': (context) => SplashPage(),
-            //   '/login': (context) => LoginPage(),
-            //   '/register': (context) => RegistrationPage(),
-            // },
             home: SplashPage(),
             routes: {
               LoginPage.routeName: (ctx) => LoginPage(),
               RegistrationPage.routeName: (ctx) => RegistrationPage(),
+              CategoryPage.routeName: (ctx) => CategoryPage(),
             }));
   }
 }

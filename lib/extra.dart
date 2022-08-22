@@ -675,6 +675,7 @@
     //     var result = await addCat.add({
     //       'name': element.name,
     //       "image": element.image,
+    //       'items': element.items,
     //     });
     //     element.items.forEach((item) {
     //       addCat.doc(result.id).collection(element.name).add({

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:grocery_delivery_app/views/login_register_pages/Wrapper_page.dart';
 
 class SplashPage extends StatefulWidget {
-  const SplashPage({Key? key}) : super(key: key);
+  SplashPage({Key? key}) : super(key: key);
 
   @override
   _SplashPageState createState() => _SplashPageState();
@@ -18,7 +18,7 @@ class _SplashPageState extends State<SplashPage> {
     Timer(
         const Duration(seconds: 3),
         () => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => const Wrapper())));
+            context, MaterialPageRoute(builder: (context) => Wrapper())));
   }
 
   @override

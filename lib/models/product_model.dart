@@ -2,11 +2,7 @@
 //
 //     final Data = DataFromJson(jsonString);
 
-import 'dart:convert';
-
 import 'package:flutter/cupertino.dart';
-
-
 
 class Product with ChangeNotifier {
   int id;
@@ -25,7 +21,7 @@ class Product with ChangeNotifier {
     required this.description,
   });
 
-  factory Product.fromJson(Map<String, dynamic> json) => Product(
+  static Product fromJson(Map<String, dynamic> json) => Product(
         id: json["id"],
         name: json["name"],
         weight: json["weight"],

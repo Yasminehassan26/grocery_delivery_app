@@ -8,17 +8,23 @@ import 'package:grocery_delivery_app/views/main_page/main_page.dart';
 import 'package:provider/provider.dart';
 
 class Wrapper extends StatelessWidget {
-  const Wrapper({Key? key}) : super(key: key);
+  Wrapper({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final authService = Provider.of<AuthenticationService>(context);
     return StreamBuilder<UserData?>(
         stream: authService.user,
-        builder: (_, AsyncSnapshot<UserData?> snapshot) {
+        builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.active) {
-            final UserData? user = snapshot.data;
-            return user == null ? LoginPage() : MainPage();
+            // final UserData? user = snapshot.data;
+            // return user == null ? LoginPage() : MainPage();
+            if (snapshot.hasData) {
+              final UserData? user = snapshot.data;
+              return MainPage();
+            } else {
+              return LoginPage();
+            }
           } else {
             return const Scaffold(
                 body: Center(

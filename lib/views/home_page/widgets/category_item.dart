@@ -1,40 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_delivery_app/models/category_model.dart';
 import 'package:grocery_delivery_app/views/widgets/text_widget.dart';
 import 'package:provider/provider.dart';
 
-import '../../../models/product_model.dart';
+import '../../Cat/categoryPage.dart';
 
 class CategoryItem extends StatelessWidget {
-  // final String id;
-  // final String title;
-  // final String imageUrl;
-
-  // ProductItem(this.id, this.title, this.imageUrl);
-
   @override
   Widget build(BuildContext context) {
-    final product = Provider.of<Product>(context);
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(10),
+    final category = Provider.of<Category>(context);
+    return SizedBox(
+      width: 30,
+      height: 30,
       child: GridTile(
-        // header: TextWidget(title: "hi"),
-        // child: GestureDetector(
-        //   onTap: () {},
-        //   child: Image.network(
-        //     product.image,
-        //     fit: BoxFit.cover,
-        //   ),
-        // ),
-        header: Text(
-          product.name,
-          textAlign: TextAlign.center,
-          style: const TextStyle(fontWeight: FontWeight.bold),
-        ),
-
-        child: GestureDetector(
-          child: Image.network(
-            product.image,
-            fit: BoxFit.fill,
+        header: Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: TextWidget(title: category.name, weight: FontWeight.bold)),
+        child: Padding(
+          padding:
+              const EdgeInsets.only(top: 40.0, bottom: 10, left: 20, right: 20),
+          child: GestureDetector(
+            onTap: (() {
+              Navigator.of(context).pushNamed(
+                CategoryPage.routeName,
+                arguments: category.name,
+              );
+            }),
+            child: Image.network(
+              category.image,
+              fit: BoxFit.fill,
+            ),
           ),
         ),
       ),

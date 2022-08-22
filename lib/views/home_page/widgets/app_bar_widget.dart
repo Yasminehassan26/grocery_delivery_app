@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_delivery_app/views/widgets/text_widget.dart';
+import 'package:provider/provider.dart';
+
+import '../../../services/authentication_service.dart';
 
 class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
   const AppBarWidget({
@@ -8,6 +11,8 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final authService = Provider.of<AuthenticationService>(context);
+
     return AppBar(
       backgroundColor: Color(0xffFFFFFF),
       foregroundColor: Colors.black,
@@ -42,7 +47,9 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
             IconButton(
               icon: const Icon(Icons.place,
                   color: Color.fromARGB(255, 82, 82, 82)),
-              onPressed: () {},
+              onPressed: () {
+                authService.signOut();
+              },
             ),
             TextWidget(
               title: 'Home',

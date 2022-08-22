@@ -8,7 +8,7 @@ import 'package:grocery_delivery_app/views/home_page/widgets/carousel_widget.dar
 import 'package:provider/provider.dart';
 
 import '../../services/authentication_service.dart';
-import 'widgets/app_bar_widget.dart';
+import '../home_page/widgets/app_bar_widget.dart';
 import '../widgets/elevated_button_widget.dart';
 
 class MainPage extends StatefulWidget {
@@ -35,13 +35,11 @@ class MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: screens[index],
+      body: screens.elementAt(index),
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.green,
         unselectedItemColor: Colors.grey,
         showUnselectedLabels: true,
-        // backgroundColor: Color.fromARGB(255, 239, 239, 239),
-        // elevation: 40,
         currentIndex: index,
         onTap: _selectScreen,
         items: const [
