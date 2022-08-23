@@ -4,8 +4,8 @@ import 'package:provider/provider.dart';
 
 import '../../../services/authentication_service.dart';
 
-class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
-  const AppBarWidget({
+class HomeAppBarWidget extends StatelessWidget with PreferredSizeWidget {
+  const HomeAppBarWidget({
     Key? key,
   }) : super(key: key);
 
@@ -14,7 +14,7 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
     final authService = Provider.of<AuthenticationService>(context);
 
     return AppBar(
-      backgroundColor: Color(0xffFFFFFF),
+      backgroundColor: Colors.white,
       foregroundColor: Colors.black,
       elevation: 1,
       title: Row(

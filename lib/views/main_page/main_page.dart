@@ -8,7 +8,7 @@ import 'package:grocery_delivery_app/views/home_page/widgets/carousel_widget.dar
 import 'package:provider/provider.dart';
 
 import '../../services/authentication_service.dart';
-import '../home_page/widgets/app_bar_widget.dart';
+import 'widgets/home_appbar_widget.dart';
 import '../widgets/elevated_button_widget.dart';
 
 class MainPage extends StatefulWidget {
@@ -18,6 +18,13 @@ class MainPage extends StatefulWidget {
 
 class MainPageState extends State<MainPage> {
   int index = 0;
+  final appBar = [
+    HomeAppBarWidget(),
+    HomeAppBarWidget(),
+    HomeAppBarWidget(),
+    HomeAppBarWidget(),
+    HomeAppBarWidget(),
+  ];
   final screens = [
     //add differentPages
     HomePageState(),
@@ -35,6 +42,7 @@ class MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: appBar.elementAt(index),
       body: screens.elementAt(index),
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.green,

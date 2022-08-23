@@ -14,6 +14,7 @@ class CategoriesGrid extends StatelessWidget {
     final categories = categoriesData.items;
     return Expanded(
       child: GridView.builder(
+        padding: EdgeInsets.all(10),
         shrinkWrap: true,
         itemCount: categories.length,
         itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
@@ -22,7 +23,7 @@ class CategoriesGrid extends StatelessWidget {
         ),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
-          childAspectRatio: 1,
+          childAspectRatio: 0.94,
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
         ),

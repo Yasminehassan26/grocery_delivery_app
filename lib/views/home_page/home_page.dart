@@ -5,7 +5,7 @@ import 'package:grocery_delivery_app/views/widgets/text_widget.dart';
 import 'package:provider/provider.dart';
 import '../../models/category_model.dart';
 import '../../services/authentication_service.dart';
-import 'widgets/app_bar_widget.dart';
+import '../main_page/widgets/home_appbar_widget.dart';
 import 'widgets/categories_grid.dart';
 
 class HomePageState extends StatelessWidget {
@@ -14,7 +14,6 @@ class HomePageState extends StatelessWidget {
     final categoriesData = Provider.of<Categories>(context);
 
     return Scaffold(
-      appBar: AppBarWidget(),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [

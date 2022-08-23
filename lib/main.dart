@@ -2,7 +2,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:grocery_delivery_app/models/categories.dart';
-import 'package:grocery_delivery_app/views/Cat/categoryPage.dart';
+import 'package:grocery_delivery_app/models/products.dart';
+import 'package:grocery_delivery_app/views/category_page/categoryPage.dart';
+import 'package:grocery_delivery_app/views/product_page/product_page.dart';
 import 'package:provider/provider.dart';
 
 import 'package:grocery_delivery_app/services/authentication_service.dart';
@@ -30,6 +32,8 @@ class MyApp extends StatelessWidget {
             create: (_) => AuthenticationService(),
           ),
           ChangeNotifierProvider<Categories>.value(value: Categories()),
+          ChangeNotifierProvider<Products>.value(value: Products()),
+
         ],
         child: MaterialApp(
             debugShowCheckedModeBanner: false,
@@ -42,6 +46,8 @@ class MyApp extends StatelessWidget {
               LoginPage.routeName: (ctx) => LoginPage(),
               RegistrationPage.routeName: (ctx) => RegistrationPage(),
               CategoryPage.routeName: (ctx) => CategoryPage(),
+              ProductPage.routeName: (ctx) => ProductPage(),
+
             }));
   }
 }

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_delivery_app/models/categories.dart';
-import 'package:grocery_delivery_app/views/home_page/widgets/carousel_widget.dart';
+import 'package:grocery_delivery_app/views/category_page/widgets/category_appBar_widget.dart';
+import 'package:grocery_delivery_app/views/category_page/widgets/products_grid.dart';
 import 'package:provider/provider.dart';
-import '../../services/authentication_service.dart';
-import '../home_page/widgets/app_bar_widget.dart';
 
 class CategoryPage extends StatelessWidget {
   static const routeName = '/category';
@@ -16,10 +15,10 @@ class CategoryPage extends StatelessWidget {
       context,
       listen: false,
     ).findById(categoryName);
+
     return Scaffold(
-      appBar: AppBar(
-        title: Text(loadedCategory.name),
-      ),
+      appBar: CategoryAppBar(loadedCategory: loadedCategory),
+      body: Column(children: [ProductsGrid()]),
     );
   }
 }
