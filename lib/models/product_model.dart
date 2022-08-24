@@ -1,6 +1,4 @@
-// To parse this JSON data, do
-//
-//     final Data = DataFromJson(jsonString);
+
 
 import 'package:flutter/cupertino.dart';
 

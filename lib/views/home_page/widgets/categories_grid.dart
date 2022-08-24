@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_delivery_app/models/categories.dart';
+import 'package:grocery_delivery_app/services/categories.dart';
 import 'package:grocery_delivery_app/views/home_page/widgets/category_item.dart';
 import 'package:provider/provider.dart';
-
-import '../../../models/products.dart';
 
 class CategoriesGrid extends StatelessWidget {
   CategoriesGrid({Key? key}) : super(key: key);

@@ -261,6 +261,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.7.0"
+  mvvm:
+    dependency: "direct main"
+    description:
+      name: mvvm
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.5.2"
   nested:
     dependency: transitive
     description:

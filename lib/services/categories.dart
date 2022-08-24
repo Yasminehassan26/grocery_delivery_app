@@ -1,8 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:grocery_delivery_app/models/category_model.dart';
-import 'package:grocery_delivery_app/models/product_model.dart';
-import 'package:grocery_delivery_app/models/products.dart';
+
 
 class Categories with ChangeNotifier {
   late List<Category> _items;
@@ -14,7 +13,6 @@ class Categories with ChangeNotifier {
   set items(List<Category> input) {
     _items = input;
     
-    notifyListeners();
   }
 
   Category findById(String id) {

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_delivery_app/views/widgets/text_widget.dart';
-import '../login_register_pages/widgets/login_widget.dart';
 
 class ProfilePage extends StatelessWidget {
   ProfilePage({Key? key}) : super(key: key);

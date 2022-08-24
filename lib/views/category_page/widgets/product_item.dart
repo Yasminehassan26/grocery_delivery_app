@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_delivery_app/models/category_model.dart';
 import 'package:grocery_delivery_app/models/product_model.dart';
+import 'package:grocery_delivery_app/views/category_page/widgets/cart_button.dart';
 import 'package:grocery_delivery_app/views/product_page/product_page.dart';
 import 'package:grocery_delivery_app/views/widgets/text_widget.dart';
 import 'package:provider/provider.dart';
-
-import '../../category_page/categoryPage.dart';
 
 class ProductItem extends StatefulWidget {
   @override
@@ -16,21 +14,23 @@ class ProductItemState extends State<ProductItem> {
   @override
   Widget build(BuildContext context) {
     final product = Provider.of<Product>(context);
-    return GestureDetector(
-      onTap: (() {
-        Navigator.of(context).pushNamed(
-          ProductPage.routeName,
-          arguments: product.name,
-        );
-      }),
-      child: GridTile(
-          child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Expanded(
-            child: Stack(
-              children: [
-                Container(
+    return GridTile(
+        child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Expanded(
+          child: Stack(
+            clipBehavior: Clip.none,
+            children: [
+
+              GestureDetector(
+                 onTap: (() {
+            Navigator.of(context).pushNamed(
+              ProductPage.routeName,
+              arguments: product.name,
+            );
+          }),
+                child: Container(
                   decoration: BoxDecoration(
                       color: const Color(0xFFFCFCFC),
                       border: Border.all(
@@ -42,28 +42,25 @@ class ProductItemState extends State<ProductItem> {
                     child: Image.network(product.image),
                   ),
                 ),
-                Positioned(
-                  top: 0,
-                  right: 0,
-                  child: IconButton(icon: Icon(Icons.inbox), onPressed: () {}),
-                )
-              ],
-            ),
+              ),
+              Positioned(
+                top: -15,
+                right: -15,
+                child: CartButton(),
+              )
+            ],
           ),
-          const SizedBox(
-            height: 5,
-          ),
-          TextWidget(
-              title: '  \$${product.price}',
-              weight: FontWeight.bold,
-              color: Colors.green),
-          TextWidget(title: "  ${product.name}", weight: FontWeight.bold),
-          TextWidget(title: "  ${product.weight}", color: Colors.grey),
-          const SizedBox(
-            height: 12,
-          ),
-        ],
-      )),
-    );
+        ),
+        const SizedBox(
+          height: 5,
+        ),
+        TextWidget(
+            title: '  \$${product.price}',
+            weight: FontWeight.bold,
+            color: Colors.green),
+        TextWidget(title: "  ${product.name}", weight: FontWeight.bold),
+        TextWidget(title: "  ${product.weight}", color: Colors.grey),
+      ],
+    ));
   }
 }

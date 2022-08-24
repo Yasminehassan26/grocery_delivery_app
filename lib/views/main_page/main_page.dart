@@ -4,12 +4,7 @@ import 'package:grocery_delivery_app/views/cart_page/cart_page.dart';
 import 'package:grocery_delivery_app/views/home_page/home_page.dart';
 import 'package:grocery_delivery_app/views/profile_page/profile_page.dart';
 import 'package:grocery_delivery_app/views/search_page/search_page.dart';
-import 'package:grocery_delivery_app/views/home_page/widgets/carousel_widget.dart';
-import 'package:provider/provider.dart';
-
-import '../../services/authentication_service.dart';
 import 'widgets/home_appbar_widget.dart';
-import '../widgets/elevated_button_widget.dart';
 
 class MainPage extends StatefulWidget {
   @override

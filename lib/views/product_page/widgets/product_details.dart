@@ -13,30 +13,32 @@ class ProductDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-
-        padding: const EdgeInsets.symmetric(horizontal: 60.0, vertical: 40.0),
-          child: Image.network(fit: BoxFit.cover,height:120, loadedProduct.image),
-        ),
+    return Center(
+      child: Column(
+      
+        children: [
+          Container(
     
-        const SizedBox(
-          height: 10,
-        ),
-        TextWidget(
-            title: '  \$${loadedProduct.price}',
-            weight: FontWeight.bold,
-            color: Colors.green,font: 22,),
-        TextWidget(
-            title: "  ${loadedProduct.name}", weight: FontWeight.bold,font:25),
-        TextWidget(
-            title: "  ${loadedProduct.weight}", color: Colors.grey,font:20),
-        const SizedBox(
-          height: 12,
-        ),
-      ],
+          padding: const EdgeInsets.symmetric(horizontal: 60.0, vertical: 40.0),
+            child: Image.network(fit: BoxFit.cover,height:120, loadedProduct.image),
+          ),
+      
+          const SizedBox(
+            height: 10,
+          ),
+          TextWidget(
+              title: '  \$${loadedProduct.price}',
+              weight: FontWeight.bold,
+              color: Colors.green,font: 22,),
+          TextWidget(
+              title: "  ${loadedProduct.name}", weight: FontWeight.bold,font:25),
+          TextWidget(
+              title: "  ${loadedProduct.weight}", color: Colors.grey,font:20),
+          const SizedBox(
+            height: 12,
+          ),
+        ],
+      ),
     );
   }
 }

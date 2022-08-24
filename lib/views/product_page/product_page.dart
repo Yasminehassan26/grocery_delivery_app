@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_delivery_app/models/products.dart';
+import 'package:grocery_delivery_app/services/products.dart';
 import 'package:grocery_delivery_app/views/product_page/widgets/product_appBar_widget.dart';
 import 'package:grocery_delivery_app/views/product_page/widgets/product_description.dart';
 import 'package:grocery_delivery_app/views/product_page/widgets/product_details.dart';
 import 'package:provider/provider.dart';
-
 
 class ProductPage extends StatelessWidget {
   static const routeName = '/product';
@@ -23,18 +22,13 @@ class ProductPage extends StatelessWidget {
       body: Padding(
         padding: EdgeInsets.all(10),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ProductDetails(loadedProduct: loadedProduct),
-
-           DescriptionWidget(loadedProduct: loadedProduct),
+            DescriptionWidget(loadedProduct: loadedProduct),
           ],
         ),
       ),
-      
     );
   }
 }
-
-
-
-

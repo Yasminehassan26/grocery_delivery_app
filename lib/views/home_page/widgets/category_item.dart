@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_delivery_app/models/category_model.dart';
-import 'package:grocery_delivery_app/models/products.dart';
+import 'package:grocery_delivery_app/services/products.dart';
 import 'package:grocery_delivery_app/views/widgets/text_widget.dart';
 import 'package:provider/provider.dart';
 
@@ -23,7 +23,7 @@ class CategoryItem extends StatelessWidget {
       child: GridTile(
         header: Padding(
             padding: const EdgeInsets.only(top: 8.0),
-            child: TextWidget(title: category.name, weight: FontWeight.bold,textAlign: TextAlign.center,)),
+            child: TextWidget(title: category.name, weight: FontWeight.bold,textAlign: TextAlign.center)),
         child: Padding(
           padding:
               const EdgeInsets.only(top: 40.0, bottom: 10, left: 20, right: 20),

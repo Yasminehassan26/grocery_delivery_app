@@ -1,8 +1,7 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:grocery_delivery_app/views/category_page/widgets/product_item.dart';
 import 'package:provider/provider.dart';
-import '../../../models/products.dart';
+import '../../../services/products.dart';
 
 class ProductsGrid extends StatelessWidget {
   @override
@@ -10,7 +9,7 @@ class ProductsGrid extends StatelessWidget {
     final products = Provider.of<Products>(context).items;
     return Expanded(
       child: GridView.builder(
-        padding: EdgeInsets.all(14),
+        padding: EdgeInsets.all(20),
         shrinkWrap: true,
         itemCount: products.length,
         itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
@@ -19,9 +18,9 @@ class ProductsGrid extends StatelessWidget {
         ),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: 0.7,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 5,
+          childAspectRatio: 0.8,
+          crossAxisSpacing: 20,
+          mainAxisSpacing: 20,
         ),
       ),
     );

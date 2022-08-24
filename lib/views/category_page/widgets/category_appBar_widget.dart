@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../models/category_model.dart';
 import '../../widgets/text_widget.dart';
 
@@ -17,7 +16,7 @@ class CategoryAppBar extends StatelessWidget with PreferredSizeWidget {
               centerTitle: true,
       backgroundColor: Colors.white,
       foregroundColor: Colors.black,
-      elevation: 1,
+      elevation: 0,
       leading: IconButton(
         onPressed: () {
           Navigator.pop(context);
