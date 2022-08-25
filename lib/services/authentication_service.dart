@@ -1,9 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart' as auth;
+import 'package:flutter/widgets.dart';
 import 'package:grocery_delivery_app/models/user_model.dart';
 
 class AuthenticationService {
   final auth.FirebaseAuth _firebaseAuth = auth.FirebaseAuth.instance;
-  late String _userID;
 
   UserData? _getUserFromFireBase(auth.User? user) {
     if (user == null) {
@@ -13,11 +13,7 @@ class AuthenticationService {
     return UserData(user.uid, user.email);
   }
 
-  set userId(String id) {
-    _userID = id;
-  }
-
-  String get userId => _userID;
+  
 
   Stream<UserData?> get user {
     return _firebaseAuth.authStateChanges().map(_getUserFromFireBase);
@@ -28,7 +24,6 @@ class AuthenticationService {
     try {
       checkUser = await _firebaseAuth.signInWithEmailAndPassword(
           email: email, password: password);
-      userId = checkUser.user.uid;
       return true;
     } on auth.FirebaseAuthException catch (e) {
       return false;

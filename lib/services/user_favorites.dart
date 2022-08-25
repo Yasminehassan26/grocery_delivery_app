@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/widgets.dart';
 import 'package:grocery_delivery_app/models/product_model.dart';
 
@@ -14,15 +15,20 @@ class UserFavorites with ChangeNotifier {
     notifyListeners();
   }
 
-  bool containsId(Product product) {
-    return _items.contains(product);
+  bool containsProduct(Product product) {
+    try {
+      findById(product.id);
+      return true;
+    } catch (e) {
+      return false;
+    }
   }
 
   Product findById(int id) {
     return _items.firstWhere((prod) => prod.id == id);
   }
 
-  void favorites(String id) async {
+  void initializeFavorites(String? id) async {
     CollectionReference collection =
         FirebaseFirestore.instance.collection('favorites');
     var doc = await collection.doc(id).get();
@@ -32,14 +38,18 @@ class UserFavorites with ChangeNotifier {
     } else {
       items = [];
     }
+    notifyListeners();
   }
 
-  void manageFavorites(String userId, Product product) async {
-    var doc = FirebaseFirestore.instance.collection('favorites').doc(userId);
+  void manageFavorites(Product product) async {
+    var doc = FirebaseFirestore.instance
+        .collection('favorites')
+        .doc(FirebaseAuth.instance.currentUser?.uid);
     var snapshot = await doc.get();
     if (snapshot.exists) {
-      if (containsId(product)) {
-        _items.remove(product);
+
+      if (containsProduct(product)) {
+        _items.removeWhere((element) => element.id == product.id);
       } else {
         _items.add(product);
       }
@@ -51,6 +61,8 @@ class UserFavorites with ChangeNotifier {
             .toList(),
       });
     } else {
+      print("snap no");
+
       _items.add(product);
 
       doc.set({

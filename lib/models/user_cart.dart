@@ -1,12 +1,13 @@
 import 'dart:convert';
 
+import 'package:flutter/cupertino.dart';
 import 'package:grocery_delivery_app/models/product_model.dart';
 
 List<UserCart> userCartFromJson(String str) => List<UserCart>.from(json.decode(str).map((x) => UserCart.fromJson(x)));
 
 String userCartToJson(List<UserCart> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
-class UserCart {
+class UserCart  with ChangeNotifier {
     UserCart({
         required this.quantity,
         required this.product,

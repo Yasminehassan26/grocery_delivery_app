@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_delivery_app/services/authentication_service.dart';
+import 'package:grocery_delivery_app/services/cart.dart';
+import 'package:grocery_delivery_app/views/main_page/main_page.dart';
 import 'package:grocery_delivery_app/views/widgets/text_widget.dart';
 import 'package:provider/provider.dart';
 
@@ -19,6 +21,7 @@ class LoginBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final authService = Provider.of<AuthenticationService>(context);
     final favorites = Provider.of<UserFavorites>(context);
+    final cart = Provider.of<Cart>(context);
 
     // List<Category> data = DataFromJson(json.encode(jsonn));
 
@@ -50,10 +53,15 @@ class LoginBody extends StatelessWidget {
       var res =
           await authService.signIn(emailController.text, passController.text);
       if (res) {
-        favorites.favorites(authService.userId);
+        // favorites.initializeFavorites(authService.userId);
+        // cart.initializeCart(authService.userId);
+        Navigator.of(context).pushNamed(
+          MainPage.routeName,
+        );
+      }
       }
       // await addProducts();
-    }
+    
 
     return Column(children: [
       Form(

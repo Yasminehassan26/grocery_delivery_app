@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_delivery_app/models/product_model.dart';
+import 'package:grocery_delivery_app/services/cart.dart';
 import 'package:grocery_delivery_app/views/category_page/widgets/cart_button.dart';
+import 'package:grocery_delivery_app/views/category_page/widgets/icon_button.dart';
 import 'package:grocery_delivery_app/views/product_page/product_page.dart';
 import 'package:grocery_delivery_app/views/widgets/text_widget.dart';
 import 'package:provider/provider.dart';
@@ -14,6 +16,8 @@ class ProductItemState extends State<ProductItem> {
   @override
   Widget build(BuildContext context) {
     final product = Provider.of<Product>(context);
+        final cart = Provider.of<Cart>(context);
+
     return GridTile(
         child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,7 +50,7 @@ class ProductItemState extends State<ProductItem> {
               Positioned(
                 top: -15,
                 right: -15,
-                child: CartButton(),
+                child:(cart.containsProduct(product.id))?CartButton(product.id): IconButtonCart(product),
               )
             ],
           ),

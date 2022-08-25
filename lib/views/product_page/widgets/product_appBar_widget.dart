@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:grocery_delivery_app/models/product_model.dart';
 import 'package:grocery_delivery_app/services/authentication_service.dart';
@@ -12,11 +13,10 @@ class ProductAppBar extends StatelessWidget with PreferredSizeWidget {
   }) : super(key: key);
 
   final Product loadedProduct;
-
+  void find() async {}
   @override
   Widget build(BuildContext context) {
     final favorites = Provider.of<UserFavorites>(context);
-    final userId = Provider.of<AuthenticationService>(context);
 
     return AppBar(
       centerTitle: true,
@@ -36,11 +36,17 @@ class ProductAppBar extends StatelessWidget with PreferredSizeWidget {
       ),
       actions: [
         IconButton(
-          icon: (favorites.containsId(loadedProduct))
-              ? const Icon(Icons.favorite,color: Colors.red,)
-              : const Icon(Icons.favorite_border),
+          iconSize: 25,
+          icon: (favorites.containsProduct(loadedProduct))
+              ? const Icon(
+                  Icons.favorite,
+                  color: Colors.red,
+                )
+              : const Icon(
+                  Icons.favorite_border,
+                ),
           onPressed: () {
-            favorites.manageFavorites(userId.userId, loadedProduct);
+            favorites.manageFavorites(loadedProduct);
           },
         ),
         const SizedBox(width: 5)

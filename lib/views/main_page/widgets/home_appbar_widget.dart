@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_delivery_app/views/login_register_pages/login_page.dart';
 import 'package:grocery_delivery_app/views/widgets/text_widget.dart';
 import 'package:provider/provider.dart';
 
@@ -49,6 +50,9 @@ class HomeAppBarWidget extends StatelessWidget with PreferredSizeWidget {
                   color: Color.fromARGB(255, 82, 82, 82)),
               onPressed: () {
                 authService.signOut();
+                 Navigator.of(context).pushNamed(
+          LoginPage.routeName,
+        );
               },
             ),
             TextWidget(
