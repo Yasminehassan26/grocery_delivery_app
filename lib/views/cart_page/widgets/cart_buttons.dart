@@ -6,8 +6,8 @@ import '../../../services/authentication_service.dart';
 import '../../../services/cart.dart';
 import '../../widgets/text_widget.dart';
 
-class trailingCartWidget extends StatelessWidget {
-  const trailingCartWidget({
+class TrailingCartWidget extends StatelessWidget {
+  const TrailingCartWidget({
     Key? key,
     required this.product,
   }) : super(key: key);
@@ -48,7 +48,7 @@ class trailingCartWidget extends StatelessWidget {
             ),
             child: Center(
               child: IconButton(
-                  color:Theme.of(context).primaryColor,
+                  color: Theme.of(context).primaryColor,
                   iconSize: 25,
                   onPressed: decrement,
                   icon: (product.quantity == 1)
@@ -57,15 +57,18 @@ class trailingCartWidget extends StatelessWidget {
             ),
           ),
           Container(
-            color:Theme.of(context).primaryColor,
+            color: Theme.of(context).primaryColor,
             width: 38,
             height: 38,
             child: Center(
-              child: TextWidget(
-                  title: '${product.quantity}',
-                  color: Colors.white,
-                  font: 20,
-                  weight: FontWeight.bold),
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: TextWidget(
+                    title: '${product.quantity}',
+                    color: Colors.white,
+                    font: 20,
+                    weight: FontWeight.bold),
+              ),
             ),
           ),
           Container(

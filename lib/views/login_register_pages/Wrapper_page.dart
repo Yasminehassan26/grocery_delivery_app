@@ -17,11 +17,14 @@ class Wrapper extends StatelessWidget {
     final authService = Provider.of<AuthenticationService>(context);
     final favorites = Provider.of<UserFavorites>(context, listen: false);
     final cart = Provider.of<Cart>(context, listen: false);
-    if (authService.getUser() == null) {
+    if (authService.getCurrentUser() == null) {
       print("user null");
 
       return LoginPage();
     } else {
+      if (!authService.currentUser) {
+        authService.currentUser = true;
+      }
       print("ohaaaaaaaaaaaaaa");
       favorites.initializeFavorites(authService.getUser());
       cart.initializeCart(authService.getUser());

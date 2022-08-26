@@ -71,12 +71,11 @@ class Cart with ChangeNotifier {
     }
   }
 
-  void addToCart(Product p, String? id) async {
+  Future<void> addToCart(Product p, String? id) async {
     var doc = FirebaseFirestore.instance.collection('cart').doc(id);
-    var snapshot = await doc.get();
 
     _items.add(UserCart(quantity: 1, product: p));
-    doc.set({
+    await doc.set({
       'items': _items
           .map(
             (item) => item.toJson(),
@@ -86,27 +85,27 @@ class Cart with ChangeNotifier {
     notifyListeners();
   }
 
-  void deleteCart(String? id) async {
+  Future<void> deleteCart(String? id) async {
     var doc = FirebaseFirestore.instance.collection('cart').doc(id);
     _items.clear();
-    doc.delete();
+    await doc.delete();
     notifyListeners();
   }
 
-  void initializeCart(String? id) async {
+  Future<void> initializeCart(String? id) async {
     CollectionReference collection =
         FirebaseFirestore.instance.collection('cart');
     var doc = await collection.doc(id).get();
     if (doc.exists) {
-      items = List<UserCart>.from(
+      items = await List<UserCart>.from(
           doc.get('items').map((x) => UserCart.fromJson(x)));
     } else {
       items = [];
     }
   }
 
-  void checkoutCart(String? user) {
-    deleteCart(user);
+  Future<void> checkoutCart(String? user) async {
+    await deleteCart(user);
   }
 
   double getTotalPrice() {

@@ -23,8 +23,8 @@ class ProductPage extends StatelessWidget {
     ).findById(productName);
     final cart = Provider.of<Cart>(context);
     final authService = Provider.of<AuthenticationService>(context);
-    void addToCart() {
-      cart.addToCart(loadedProduct, authService.getUser());
+    Future<void> addToCart() async {
+      await cart.addToCart(loadedProduct, authService.getUser());
     }
 
     return Scaffold(
@@ -44,7 +44,7 @@ class ProductPage extends StatelessWidget {
               ),
             ),
           ),
-          (cart.items.isEmpty)
+          (!cart.containsProduct(loadedProduct.id))
               ? Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: ElevatedButtonWidget("Add to Cart", addToCart),

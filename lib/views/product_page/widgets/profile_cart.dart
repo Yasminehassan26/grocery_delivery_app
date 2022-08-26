@@ -61,11 +61,14 @@ class ProfileCartButton extends StatelessWidget {
             width: 60,
             height: 39,
             child: Center(
-              child: TextWidget(
-                  title: '${cartProduct.quantity}',
-                  color: Colors.white,
-                  font: 20,
-                  weight: FontWeight.bold),
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: TextWidget(
+                    title: '${cartProduct.quantity}',
+                    color: Colors.white,
+                    font: 20,
+                    weight: FontWeight.bold),
+              ),
             ),
           ),
           Container(

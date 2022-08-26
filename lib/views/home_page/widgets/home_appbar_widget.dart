@@ -50,9 +50,9 @@ class HomeAppBarWidget extends StatelessWidget with PreferredSizeWidget {
                   color: Color.fromARGB(255, 82, 82, 82)),
               onPressed: () {
                 authService.signOut();
-        //          Navigator.of(context).pushReplacementNamed(
-        //   LoginPage.routeName,
-        // );
+                // Navigator.of(context).pushReplacementNamed(
+                //   LoginPage.routeName,
+                // );
               },
             ),
             TextWidget(

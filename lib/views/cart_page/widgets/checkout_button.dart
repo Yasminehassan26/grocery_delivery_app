@@ -11,10 +11,9 @@ class checkoutButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cart = Provider.of<Cart>(context);
- double getTotalPrice( ) {
-    return double.parse(
-        (cart.getTotalPrice()).toStringAsFixed(2));
-  }
+    double getTotalPrice() {
+      return double.parse((cart.getTotalPrice()).toStringAsFixed(2));
+    }
 
     return Padding(
       padding: const EdgeInsets.all(20),
@@ -32,12 +31,16 @@ class checkoutButton extends StatelessWidget {
           children: [
             Container(
               height: 60,
+              width: 120,
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Center(
-                child: TextWidget(
-                    title: "\$${getTotalPrice()}",
-                    weight: FontWeight.bold,
-                    font: 20),
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: TextWidget(
+                      title: "\$${getTotalPrice()}",
+                      weight: FontWeight.bold,
+                      font: 20),
+                ),
               ),
             ),
             Expanded(
@@ -50,7 +53,7 @@ class checkoutButton extends StatelessWidget {
                   },
                   style: ElevatedButton.styleFrom(
                     elevation: 0,
-                    primary:Theme.of(context).primaryColor,
+                    primary: Theme.of(context).primaryColor,
                     shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.only(
                           topRight: Radius.circular(10.0),
@@ -70,5 +73,4 @@ class checkoutButton extends StatelessWidget {
       ),
     );
   }
-  
 }

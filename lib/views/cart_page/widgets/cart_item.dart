@@ -24,8 +24,7 @@ class CartItem extends StatelessWidget {
           height: 100,
           padding: const EdgeInsets.all(0),
           alignment: Alignment.center,
-          // width: width,
-
+          width: width,
           child: ListTile(
             dense: true,
             visualDensity: const VisualDensity(vertical: 4),
@@ -44,27 +43,33 @@ class CartItem extends StatelessWidget {
             title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      TextWidget(
-                          title: product.product.name,
-                          weight: FontWeight.bold,
-                          font: 16),
-                      TextWidget(
-                          title: product.product.weight,
-                          color: Theme.of(context).secondaryHeaderColor,
-                          weight: FontWeight.bold,
-                          font: 16),
-                      TextWidget(
-                          title: "\$${calculate(product)}",
-                          color: Theme.of(context).primaryColor,
-                          weight: FontWeight.bold,
-                          font: 16),
-                    ],
+                  Container(
+                    width: width / 4,
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          TextWidget(
+                              title: product.product.name,
+                              weight: FontWeight.bold,
+                              font: 16),
+                          TextWidget(
+                              title: product.product.weight,
+                              color: Theme.of(context).secondaryHeaderColor,
+                              weight: FontWeight.bold,
+                              font: 16),
+                          TextWidget(
+                              title: "\$${calculate(product)}",
+                              color: Theme.of(context).primaryColor,
+                              weight: FontWeight.bold,
+                              font: 16),
+                        ],
+                      ),
+                    ),
                   ),
-                  trailingCartWidget(product: product),
+                  TrailingCartWidget(product: product),
                 ]),
 
             //trailingCartWidget(product: product),

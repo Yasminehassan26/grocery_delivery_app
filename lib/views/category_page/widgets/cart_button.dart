@@ -16,11 +16,11 @@ class CartButton extends StatelessWidget {
     final authService = Provider.of<AuthenticationService>(context);
 
     void increment() {
-      cart.incrementProduct(id,authService.getUser());
+      cart.incrementProduct(id, authService.getUser());
     }
 
     void decrement() {
-      cart.decrementProduct(id,authService.getUser());
+      cart.decrementProduct(id, authService.getUser());
     }
 
     UserCart p = cart.findById(id);
@@ -39,24 +39,25 @@ class CartButton extends StatelessWidget {
                 topRight: Radius.circular(10.0),
                 topLeft: Radius.circular(10.0)),
           ),
-          child: Center(
-            child: IconButton(
-                color:Theme.of(context).primaryColor,
-                iconSize: 25,
-                onPressed: decrement,
-                icon: const Icon(Icons.remove)),
-          ),
+          child: IconButton(
+              color: Theme.of(context).primaryColor,
+              iconSize: 25,
+              onPressed: decrement,
+              icon: const Icon(Icons.remove)),
         ),
         Container(
           width: 38,
           height: 38,
-          color:Theme.of(context).primaryColor,
+          color: Theme.of(context).primaryColor,
           child: Center(
-            child: TextWidget(
-                title: '${p.quantity}',
-                color: Colors.white,
-                font: 20,
-                weight: FontWeight.bold),
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: TextWidget(
+                  title: '${p.quantity}',
+                  color: Colors.white,
+                  font: 20,
+                  weight: FontWeight.bold),
+            ),
           ),
         ),
         Container(
@@ -71,13 +72,11 @@ class CartButton extends StatelessWidget {
                 bottomRight: Radius.circular(10.0),
                 bottomLeft: Radius.circular(10.0)),
           ),
-          child: Center(
-            child: IconButton(
-              color: Theme.of(context).primaryColor,
-              iconSize: 25,
-              onPressed:increment,
-              icon: Icon(Icons.add),
-            ),
+          child: IconButton(
+            color: Theme.of(context).primaryColor,
+            iconSize: 25,
+            onPressed: increment,
+            icon: Icon(Icons.add),
           ),
         )
       ],
