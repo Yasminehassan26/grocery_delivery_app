@@ -16,13 +16,7 @@ class MainPage extends StatefulWidget {
 
 class MainPageState extends State<MainPage> {
   int index = 0;
-  List<PreferredSizeWidget> appbars = [
-    HomeAppBarWidget(),
-    HomeAppBarWidget(),
-    CartAppBar(),
-    HomeAppBarWidget(),
-    HomeAppBarWidget(),
-  ];
+
   final screens = [
     //add differentPages
     HomePageState(),
@@ -41,11 +35,10 @@ class MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     if (index != 2) {
       return Scaffold(
-        appBar: appbars.elementAt(index),
         body: screens.elementAt(index),
         bottomNavigationBar: BottomNavigationBar(
-          selectedItemColor: Colors.green,
-          unselectedItemColor: Colors.grey,
+          selectedItemColor:Theme.of(context).primaryColor,
+          unselectedItemColor:Theme.of(context).secondaryHeaderColor,
           showUnselectedLabels: true,
           currentIndex: index,
           onTap: _selectScreen,

@@ -41,10 +41,10 @@ class UserFavorites with ChangeNotifier {
     notifyListeners();
   }
 
-  void manageFavorites(Product product) async {
+  void manageFavorites(Product product,String? id) async {
     var doc = FirebaseFirestore.instance
         .collection('favorites')
-        .doc(FirebaseAuth.instance.currentUser?.uid);
+        .doc(id);
     var snapshot = await doc.get();
     if (snapshot.exists) {
 
@@ -61,7 +61,6 @@ class UserFavorites with ChangeNotifier {
             .toList(),
       });
     } else {
-      print("snap no");
 
       _items.add(product);
 

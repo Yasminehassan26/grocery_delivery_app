@@ -17,6 +17,7 @@ class ProductAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     final favorites = Provider.of<UserFavorites>(context);
+    final authService = Provider.of<AuthenticationService>(context);
 
     return AppBar(
       centerTitle: true,
@@ -46,7 +47,7 @@ class ProductAppBar extends StatelessWidget with PreferredSizeWidget {
                   Icons.favorite_border,
                 ),
           onPressed: () {
-            favorites.manageFavorites(loadedProduct);
+            favorites.manageFavorites(loadedProduct,authService.getUser());
           },
         ),
         const SizedBox(width: 5)

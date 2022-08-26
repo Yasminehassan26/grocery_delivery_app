@@ -7,15 +7,12 @@ class CartGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cartItems = Provider.of<Cart>(context).items;
-    return Expanded(
-      child: ListView.builder(
-        padding: const EdgeInsets.all(20),
-        shrinkWrap: true,
-        itemCount: cartItems.length,
-        itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
-          value: cartItems[i],
-          child: CartItem(),
-        ),
+    return ListView.builder(
+      shrinkWrap: true,
+      itemCount: cartItems.length,
+      itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
+        value: cartItems[i],
+        child: CartItem(),
       ),
     );
   }

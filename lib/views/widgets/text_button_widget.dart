@@ -9,7 +9,7 @@ class ButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      child: TextWidget(title: title, color: Colors.green),
+      child: TextWidget(title: title, color: Theme.of(context).primaryColor),
       onPressed: () {},
     );
   }

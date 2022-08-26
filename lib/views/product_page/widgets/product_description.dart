@@ -13,9 +13,8 @@ class DescriptionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+    return Column(crossAxisAlignment: CrossAxisAlignment.start,
+        // mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           TextWidget(
             title: "Product Details",
@@ -24,9 +23,9 @@ class DescriptionWidget extends StatelessWidget {
           ),
           TextWidget(
             title: loadedProduct.description,
-            color: Colors.grey,
+            color: Theme.of(context).secondaryHeaderColor,
             font: 18,
-          )
+          ),
         ]);
   }
 }

@@ -21,16 +21,16 @@ class Cart with ChangeNotifier {
     return _items.firstWhere((prod) => prod.product.id == id);
   }
 
-  void incrementProduct(int id) async {
+  void incrementProduct(int id, String? uid) async {
     _items.forEach((element) {
       if (element.product.id == id) {
         element.quantity++;
       }
     });
-    await updateCart();
+    await updateCart(uid);
   }
 
-  void decrementProduct(int id) async {
+  void decrementProduct(int id, String? uid) async {
     try {
       _items.forEach((element) {
         if (element.product.id == id) {
@@ -44,13 +44,11 @@ class Cart with ChangeNotifier {
     } catch (e) {
       // leave it
     }
-    await updateCart();
+    await updateCart(uid);
   }
 
-  Future<void> updateCart() async {
-    var doc = FirebaseFirestore.instance
-        .collection('cart')
-        .doc(FirebaseAuth.instance.currentUser?.uid);
+  Future<void> updateCart(String? id) async {
+    var doc = FirebaseFirestore.instance.collection('cart').doc(id);
     var snapshot = await doc.get();
     if (snapshot.exists) {
       doc.update({
@@ -73,10 +71,8 @@ class Cart with ChangeNotifier {
     }
   }
 
-  void addToCart(Product p) async {
-    var doc = FirebaseFirestore.instance
-        .collection('cart')
-        .doc(FirebaseAuth.instance.currentUser?.uid);
+  void addToCart(Product p, String? id) async {
+    var doc = FirebaseFirestore.instance.collection('cart').doc(id);
     var snapshot = await doc.get();
 
     _items.add(UserCart(quantity: 1, product: p));
@@ -90,6 +86,13 @@ class Cart with ChangeNotifier {
     notifyListeners();
   }
 
+  void deleteCart(String? id) async {
+    var doc = FirebaseFirestore.instance.collection('cart').doc(id);
+    _items.clear();
+    doc.delete();
+    notifyListeners();
+  }
+
   void initializeCart(String? id) async {
     CollectionReference collection =
         FirebaseFirestore.instance.collection('cart');
@@ -100,5 +103,17 @@ class Cart with ChangeNotifier {
     } else {
       items = [];
     }
+  }
+
+  void checkoutCart(String? user) {
+    deleteCart(user);
+  }
+
+  double getTotalPrice() {
+    double totalPrice = 0.0;
+    _items.forEach((item) {
+      totalPrice += item.quantity * item.product.price;
+    });
+    return totalPrice;
   }
 }

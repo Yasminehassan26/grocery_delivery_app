@@ -13,8 +13,8 @@ class UserCart  with ChangeNotifier {
         required this.product,
     });
 
-    int quantity;
-    Product product;
+     int quantity;
+    final Product product;
 
     factory UserCart.fromJson(Map<String, dynamic> json) => UserCart(
         quantity: json["quantity"],

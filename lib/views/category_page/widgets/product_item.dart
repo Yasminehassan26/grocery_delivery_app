@@ -16,25 +16,24 @@ class ProductItemState extends State<ProductItem> {
   @override
   Widget build(BuildContext context) {
     final product = Provider.of<Product>(context);
-        final cart = Provider.of<Cart>(context);
+    final cart = Provider.of<Cart>(context);
 
     return GridTile(
         child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Expanded(
-          child: Stack(
-            clipBehavior: Clip.none,
-            children: [
-
-              GestureDetector(
-                 onTap: (() {
-            Navigator.of(context).pushNamed(
-              ProductPage.routeName,
-              arguments: product.name,
-            );
-          }),
-                child: Container(
+          child: GestureDetector(
+            onTap: (() {
+              Navigator.of(context).pushNamed(
+                ProductPage.routeName,
+                arguments: product.name,
+              );
+            }),
+            child: Stack(
+              clipBehavior: Clip.none,
+              children: [
+                Container(
                   decoration: BoxDecoration(
                       color: const Color(0xFFFCFCFC),
                       border: Border.all(
@@ -46,13 +45,15 @@ class ProductItemState extends State<ProductItem> {
                     child: Image.network(product.image),
                   ),
                 ),
-              ),
-              Positioned(
-                top: -15,
-                right: -15,
-                child:(cart.containsProduct(product.id))?CartButton(product.id): IconButtonCart(product),
-              )
-            ],
+                Positioned(
+                  top: -15,
+                  right: -15,
+                  child: (cart.containsProduct(product.id))
+                      ? CartButton(product.id)
+                      : IconButtonCart(product),
+                )
+              ],
+            ),
           ),
         ),
         const SizedBox(
@@ -61,9 +62,11 @@ class ProductItemState extends State<ProductItem> {
         TextWidget(
             title: '  \$${product.price}',
             weight: FontWeight.bold,
-            color: Colors.green),
+            color: Theme.of(context).primaryColor),
         TextWidget(title: "  ${product.name}", weight: FontWeight.bold),
-        TextWidget(title: "  ${product.weight}", color: Colors.grey),
+        TextWidget(
+            title: "  ${product.weight}",
+            color: Theme.of(context).secondaryHeaderColor),
       ],
     ));
   }

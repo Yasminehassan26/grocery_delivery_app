@@ -10,9 +10,9 @@ String DataToJson(List<Category> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class Category with ChangeNotifier {
-  String name;
-  String image;
-  List<Product> items;
+  final String name;
+  final String image;
+  final List<Product> items;
 
   Category({
     required this.name,

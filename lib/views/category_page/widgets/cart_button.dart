@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grocery_delivery_app/models/user_cart.dart';
 import 'package:provider/provider.dart';
 
+import '../../../services/authentication_service.dart';
 import '../../../services/cart.dart';
 import '../../widgets/text_widget.dart';
 
@@ -12,13 +13,14 @@ class CartButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cart = Provider.of<Cart>(context);
+    final authService = Provider.of<AuthenticationService>(context);
 
     void increment() {
-      cart.incrementProduct(id);
+      cart.incrementProduct(id,authService.getUser());
     }
 
     void decrement() {
-      cart.decrementProduct(id);
+      cart.decrementProduct(id,authService.getUser());
     }
 
     UserCart p = cart.findById(id);
@@ -39,16 +41,16 @@ class CartButton extends StatelessWidget {
           ),
           child: Center(
             child: IconButton(
-                color: Colors.green,
+                color:Theme.of(context).primaryColor,
                 iconSize: 25,
                 onPressed: decrement,
                 icon: const Icon(Icons.remove)),
           ),
         ),
         Container(
-          width: 40,
-          height: 40,
-          color: Colors.green,
+          width: 38,
+          height: 38,
+          color:Theme.of(context).primaryColor,
           child: Center(
             child: TextWidget(
                 title: '${p.quantity}',
@@ -71,7 +73,7 @@ class CartButton extends StatelessWidget {
           ),
           child: Center(
             child: IconButton(
-              color: Colors.green,
+              color: Theme.of(context).primaryColor,
               iconSize: 25,
               onPressed:increment,
               icon: Icon(Icons.add),

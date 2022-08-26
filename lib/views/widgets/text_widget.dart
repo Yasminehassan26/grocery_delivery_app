@@ -7,12 +7,12 @@ class TextWidget extends StatelessWidget {
   final Color color;
   final FontWeight weight;
   final TextAlign textAlign;
-  TextWidget(
-      {required this.title,
+   TextWidget(
+      {Key? key, required this.title,
       this.font = 14,
       this.color = Colors.black,
       this.weight = FontWeight.normal,
-      this.textAlign = TextAlign.left});
+      this.textAlign = TextAlign.left}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

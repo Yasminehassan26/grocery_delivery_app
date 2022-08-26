@@ -22,11 +22,20 @@ class CategoryItem extends StatelessWidget {
       }),
       child: GridTile(
         header: Padding(
-            padding: const EdgeInsets.only(top: 8.0),
-            child: TextWidget(title: category.name, weight: FontWeight.bold,textAlign: TextAlign.center)),
+            padding: const EdgeInsets.only(top: 4.0),
+            child: SizedBox(
+              width: 20,
+              height: 40,
+              child: TextWidget(
+                title: category.name,
+                weight: FontWeight.bold,
+                textAlign: TextAlign.center,
+                font: 12,
+              ),
+            )),
         child: Padding(
           padding:
-              const EdgeInsets.only(top: 40.0, bottom: 10, left: 20, right: 20),
+              const EdgeInsets.only(top: 42.0, bottom: 10, left: 20, right: 20),
           child: Image.network(
             category.image,
             fit: BoxFit.fill,

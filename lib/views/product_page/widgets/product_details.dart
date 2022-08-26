@@ -15,25 +15,30 @@ class ProductDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Column(
-      
         children: [
           Container(
-    
-          padding: const EdgeInsets.symmetric(horizontal: 60.0, vertical: 40.0),
-            child: Image.network(fit: BoxFit.cover,height:120, loadedProduct.image),
+            padding:
+                const EdgeInsets.symmetric(horizontal: 60.0, vertical: 40.0),
+            child: Image.network(
+                fit: BoxFit.cover, height: 120, loadedProduct.image),
           ),
-      
           const SizedBox(
             height: 10,
           ),
           TextWidget(
-              title: '  \$${loadedProduct.price}',
+            title: '  \$${loadedProduct.price}',
+            weight: FontWeight.bold,
+            color: Theme.of(context).primaryColor,
+            font: 22,
+          ),
+          TextWidget(
+              title: "  ${loadedProduct.name}",
               weight: FontWeight.bold,
-              color: Colors.green,font: 22,),
+              font: 25),
           TextWidget(
-              title: "  ${loadedProduct.name}", weight: FontWeight.bold,font:25),
-          TextWidget(
-              title: "  ${loadedProduct.weight}", color: Colors.grey,font:20),
+              title: "  ${loadedProduct.weight}",
+              color: Theme.of(context).secondaryHeaderColor,
+              font: 20),
           const SizedBox(
             height: 12,
           ),

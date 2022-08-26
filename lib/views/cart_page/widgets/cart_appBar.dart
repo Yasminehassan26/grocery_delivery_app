@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import '../../main_page/main_page.dart';
+import '../../home_page/main_page.dart';
 import '../../widgets/text_widget.dart';
 
 class CartAppBar extends StatelessWidget with PreferredSizeWidget {
-  const CartAppBar({Key? key}) : super(key: key);
-
+  Function function;
+  CartAppBar(this.function, {Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -14,9 +14,7 @@ class CartAppBar extends StatelessWidget with PreferredSizeWidget {
       elevation: 1,
       leading: IconButton(
         onPressed: () {
-          Navigator.of(context).pushNamed(
-            MainPage.routeName,
-          );
+          Navigator.of(context).pushReplacementNamed(MainPage.routeName);
         },
         icon: const Icon(Icons.close),
       ),
@@ -32,7 +30,7 @@ class CartAppBar extends StatelessWidget with PreferredSizeWidget {
             Icons.delete_outline,
           ),
           onPressed: () {
-            //empty cart
+            function();
           },
         ),
         const SizedBox(width: 5)

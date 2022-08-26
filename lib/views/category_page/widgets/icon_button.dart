@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../models/product_model.dart';
+import '../../../services/authentication_service.dart';
 import '../../../services/cart.dart';
 
 /// Button that floats over the category item in the [CategoryPage]
@@ -13,8 +14,10 @@ class IconButtonCart extends StatelessWidget {
   Widget build(BuildContext context) {
     // Listen to AppState in order to get the products in the user's cart
     final cart = Provider.of<Cart>(context);
+    final authService = Provider.of<AuthenticationService>(context);
+
     void addToCart() {
-      cart.addToCart(p);
+      cart.addToCart(p, authService.getUser());
     }
 
     return Container(
@@ -29,9 +32,9 @@ class IconButtonCart extends StatelessWidget {
       child: IconButton(
         iconSize: 25,
         onPressed: addToCart,
-        icon: const Icon(
+        icon:  Icon(
           Icons.add,
-          color: Colors.green,
+          color:Theme.of(context).primaryColor,
         ),
       ),
     );

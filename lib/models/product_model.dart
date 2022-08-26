@@ -3,12 +3,12 @@
 import 'package:flutter/cupertino.dart';
 
 class Product with ChangeNotifier {
-  int id;
-  String name;
-  String weight;
-  double price;
-  String image;
-  String description;
+  final int id;
+  final String name;
+  final String weight;
+  final double price;
+  final String image;
+  final String description;
 
   Product({
     required this.id,

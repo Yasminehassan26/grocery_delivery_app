@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_delivery_app/views/login_register_pages/widgets/password_input.dart';
 import 'package:grocery_delivery_app/views/widgets/text_button_widget.dart';
 import 'package:grocery_delivery_app/views/widgets/text_widget.dart';
 import 'package:provider/provider.dart';
@@ -24,10 +25,9 @@ class RegisterWidget extends StatelessWidget {
       children: [
         TextWidget(title: 'Register', font: 35, weight: FontWeight.bold),
         const SizedBox(height: 15),
-        InputWidget(emailController, 'Email', 'Email canoot be empty'),
-        InputWidget(passController, 'Password', 'Password cannot be empty'),
-        InputWidget(
-            passVController, 'Verify Password', 'Please verify password'),
+        InputWidget(emailController, 'Email', 'Email can not be empty'),
+        PasswordInput(passController, 'Enter a valid password'),
+        PasswordInput(passVController, 'Please verify password'),
         const SizedBox(height: 30),
         ElevatedButtonWidget('Register', _register),
         const SizedBox(height: 30),

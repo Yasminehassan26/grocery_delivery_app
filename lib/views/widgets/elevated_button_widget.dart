@@ -17,7 +17,7 @@ class ElevatedButtonWidget extends StatelessWidget {
         },
         style: ElevatedButton.styleFrom(
           elevation: 0,
-          primary: Colors.green,
+          primary: Theme.of(context).primaryColor,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         ),
         child: TextWidget(
