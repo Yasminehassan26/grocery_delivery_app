@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_delivery_app/views/cart_page/widgets/cart_appBar.dart';
+import 'package:grocery_delivery_app/views/login_register_pages/Wrapper_page.dart';
 import 'package:grocery_delivery_app/views/widgets/text_widget.dart';
 
 import '../../home_page/main_page.dart';
@@ -50,7 +51,7 @@ class EmptyCart extends StatelessWidget {
                 'Start Shopping',
                 () => {
                       Navigator.of(context)
-                          .pushReplacementNamed(MainPage.routeName)
+                          .pushReplacementNamed(Wrapper.routeName)
                     }),
           ],
         ),

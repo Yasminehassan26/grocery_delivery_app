@@ -51,11 +51,11 @@ class LoginBody extends StatelessWidget {
     void _login() async {
       var res =
           await authService.signIn(emailController.text, passController.text);
-      if (res) {
-        // favorites.initializeFavorites(authService.userId);
-        // cart.initializeCart(authService.userId);
-        // Navigator.of(context).pop();
-      }
+      // if (res) {
+      //   // favorites.initializeFavorites(authService.userId);
+      //   // cart.initializeCart(authService.userId);
+      //   // Navigator.of(context).pop();
+      // }
     }
     // await addProducts();
 

@@ -7,6 +7,9 @@ import 'package:provider/provider.dart';
 import '../../category_page/categoryPage.dart';
 
 class CategoryItem extends StatelessWidget {
+  // CategoryItem(this.category);
+  // final category;
+
   @override
   Widget build(BuildContext context) {
     final category = Provider.of<Category>(context);
@@ -22,15 +25,18 @@ class CategoryItem extends StatelessWidget {
       }),
       child: GridTile(
         header: Padding(
-            padding: const EdgeInsets.only(top: 4.0),
+            padding: const EdgeInsets.only(top: 6.0),
             child: SizedBox(
               width: 20,
               height: 40,
-              child: TextWidget(
-                title: category.name,
-                weight: FontWeight.bold,
-                textAlign: TextAlign.center,
-                font: 12,
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: TextWidget(
+                  title: category.name,
+                  weight: FontWeight.bold,
+                  textAlign: TextAlign.center,
+                  font: 16,
+                ),
               ),
             )),
         child: Padding(

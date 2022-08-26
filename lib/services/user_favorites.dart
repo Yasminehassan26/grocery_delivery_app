@@ -5,7 +5,7 @@ import 'package:grocery_delivery_app/models/product_model.dart';
 
 class UserFavorites with ChangeNotifier {
   late List<Product> _items;
-
+  bool _initialized = false;
   List<Product> get items {
     return [..._items];
   }
@@ -14,6 +14,11 @@ class UserFavorites with ChangeNotifier {
     _items = input;
     notifyListeners();
   }
+
+  set initialized(bool i) {
+    _initialized = i;
+  }
+  bool get initialized =>_initialized;
 
   bool containsProduct(Product product) {
     try {
@@ -41,13 +46,10 @@ class UserFavorites with ChangeNotifier {
     notifyListeners();
   }
 
-  void manageFavorites(Product product,String? id) async {
-    var doc = FirebaseFirestore.instance
-        .collection('favorites')
-        .doc(id);
+  void manageFavorites(Product product, String? id) async {
+    var doc = FirebaseFirestore.instance.collection('favorites').doc(id);
     var snapshot = await doc.get();
     if (snapshot.exists) {
-
       if (containsProduct(product)) {
         _items.removeWhere((element) => element.id == product.id);
       } else {
@@ -61,7 +63,6 @@ class UserFavorites with ChangeNotifier {
             .toList(),
       });
     } else {
-
       _items.add(product);
 
       doc.set({

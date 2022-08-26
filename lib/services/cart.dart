@@ -7,7 +7,11 @@ import '../models/product_model.dart';
 
 class Cart with ChangeNotifier {
   late List<UserCart> _items;
-
+   bool _initialized = false;
+ set initialized(bool i) {
+    _initialized = i;
+  }
+  bool get initialized =>_initialized;
   List<UserCart> get items {
     return [..._items];
   }

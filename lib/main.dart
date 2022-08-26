@@ -7,6 +7,7 @@ import 'package:grocery_delivery_app/services/products.dart';
 import 'package:grocery_delivery_app/services/utils.dart';
 import 'package:grocery_delivery_app/views/cart_page/widgets/checkout_order.dart';
 import 'package:grocery_delivery_app/views/category_page/categoryPage.dart';
+import 'package:grocery_delivery_app/views/login_register_pages/Wrapper_page.dart';
 import 'package:grocery_delivery_app/views/product_page/product_page.dart';
 import 'package:provider/provider.dart';
 
@@ -51,16 +52,20 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             title: 'Flutter Demo',
             theme: ThemeData(
+              brightness: Brightness.light,
               primarySwatch: Colors.green,
               secondaryHeaderColor: Colors.grey,
             ),
+          darkTheme: ThemeData(brightness: Brightness.dark),
+              // themeMode: ThemeMode.dark,
+
             home: SplashPage(),
             routes: {
               LoginPage.routeName: (ctx) => LoginPage(),
               RegistrationPage.routeName: (ctx) => RegistrationPage(),
               CategoryPage.routeName: (ctx) => CategoryPage(),
               ProductPage.routeName: (ctx) => ProductPage(),
-              MainPage.routeName: (ctx) => MainPage(),
+              Wrapper.routeName: (ctx) => Wrapper(),
               checkoutOrderPage.routeName: (ctx) => checkoutOrderPage(),
             }));
   }

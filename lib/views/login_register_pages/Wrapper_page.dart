@@ -10,45 +10,56 @@ import 'package:provider/provider.dart';
 import '../../services/cart.dart';
 
 class Wrapper extends StatelessWidget {
-  Wrapper({Key? key}) : super(key: key);
+  const Wrapper({Key? key}) : super(key: key);
+  static const routeName = '/wrapper';
 
   @override
   Widget build(BuildContext context) {
-    final authService = Provider.of<AuthenticationService>(context);
-    final favorites = Provider.of<UserFavorites>(context, listen: false);
-    final cart = Provider.of<Cart>(context, listen: false);
-    if (authService.getCurrentUser() == null) {
-      print("user null");
-
-      return LoginPage();
-    } else {
-      if (!authService.currentUser) {
-        authService.currentUser = true;
+    print("heloo wrapper");
+    final favorites = Provider.of<UserFavorites>(context);
+    final cart = Provider.of<Cart>(context);
+    return Consumer<AuthenticationService>(
+        builder: (context, authService, child) {
+      if (authService.currentUser) {
+        if (!favorites.initialized) {
+          favorites.initializeFavorites(authService.getUser());
+          favorites.initialized = true;
+        }
+        if (!cart.initialized) {
+          cart.initializeCart(authService.getUser());
+          cart.initialized = true;
+        }
+        return MainPage();
+      } else {
+        return LoginPage();
       }
-      print("ohaaaaaaaaaaaaaa");
-      favorites.initializeFavorites(authService.getUser());
-      cart.initializeCart(authService.getUser());
-      return MainPage();
-    }
-    // return StreamBuilder<User?>(
-    //     stream: FirebaseAuth.instance.authStateChanges(),
-    //     builder: (context, snapshot) {
-    //       if (snapshot.connectionState == ConnectionState.active) {
-    //         // final UserData? user = snapshot.data;
-    //         // return user == null ? LoginPage() : MainPage();
-    //         if (snapshot.hasData) {
-    //           // authService.userId = snapshot.data!.uid;
-
-    //           return MainPage();
-    //         } else {
-    //           return LoginPage();
-    //         }
-    //       } else {
-    //         return const Scaffold(
-    //             body: Center(
-    //           child: CircularProgressIndicator(),
-    //         ));
-    //       }
-    //     });
+    });
   }
 }
+
+
+// return StreamBuilder<UserData?>(
+//         stream: authService.user,
+//         builder: (_, AsyncSnapshot<UserData?> snapshot) {
+//           if (snapshot.connectionState == ConnectionState.active) {
+//             if (snapshot.hasData) {
+//               final UserData? user = snapshot.data;
+//               print("ohaaaaaaaaaaaaaa");
+//               if (!favorites.initialized) {
+//                 favorites.initializeFavorites(authService.getUser());
+//                 favorites.initialized = true;
+//               }
+//               if (!cart.initialized) {
+//                 cart.initializeCart(authService.getUser());
+//                 cart.initialized = true;
+//               }
+//               return MainPage();
+//             } else
+//               return LoginPage();
+//           } else {
+//             return const Scaffold(
+//                 body: Center(
+//               child: CircularProgressIndicator(),
+//             ));
+//           }
+//         });

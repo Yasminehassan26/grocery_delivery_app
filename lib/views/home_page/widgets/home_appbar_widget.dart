@@ -48,8 +48,9 @@ class HomeAppBarWidget extends StatelessWidget with PreferredSizeWidget {
             IconButton(
               icon: const Icon(Icons.place,
                   color: Color.fromARGB(255, 82, 82, 82)),
-              onPressed: () {
-                authService.signOut();
+              onPressed: () async{
+               await authService.signOut();
+                // Navigator.of(context).pop();
                 // Navigator.of(context).pushReplacementNamed(
                 //   LoginPage.routeName,
                 // );

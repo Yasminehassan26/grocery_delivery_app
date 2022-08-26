@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_delivery_app/views/login_register_pages/Wrapper_page.dart';
 import '../../home_page/main_page.dart';
 import '../../widgets/text_widget.dart';
 
@@ -14,7 +15,8 @@ class CartAppBar extends StatelessWidget with PreferredSizeWidget {
       elevation: 1,
       leading: IconButton(
         onPressed: () {
-          Navigator.of(context).pushReplacementNamed(MainPage.routeName);
+          Navigator.of(context).
+          pushReplacementNamed(Wrapper.routeName);
         },
         icon: const Icon(Icons.close),
       ),
