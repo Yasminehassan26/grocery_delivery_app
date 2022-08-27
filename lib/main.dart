@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:grocery_delivery_app/view_models/categories_view_model.dart';
 import 'services/categories.dart';
 import 'view_models/authentication_view_model.dart';
 import 'view_models/products_view_model.dart';
@@ -34,7 +35,8 @@ class MyApp extends StatelessWidget {
         providers: [
           ChangeNotifierProvider<AuthenticationViewModel>(
               create: (context) => AuthenticationViewModel()),
-          ChangeNotifierProvider<Categories>(create: (context) => Categories()),
+          ChangeNotifierProvider<CategoriesViewModel>(
+              create: (context) => CategoriesViewModel()),
           ChangeNotifierProvider<ProductsViewModel>(
               create: (context) => ProductsViewModel()),
           ChangeNotifierProvider<UserFavoritesViewModel>(

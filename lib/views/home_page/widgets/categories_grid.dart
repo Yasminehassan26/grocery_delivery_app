@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_delivery_app/view_models/categories_view_model.dart';
 import '../../../services/categories.dart';
 import 'carousel_widget.dart';
 import 'category_item.dart';
@@ -9,7 +10,7 @@ class CategoriesGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final categoriesData = Provider.of<Categories>(context);
+    final categoriesData = Provider.of<CategoriesViewModel>(context);
     final categories = categoriesData.items;
     return Expanded(
       child: Column(

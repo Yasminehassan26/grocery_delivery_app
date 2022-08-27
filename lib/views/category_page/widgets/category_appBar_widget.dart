@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../models/category_model.dart';
+import '../../../models/category.dart';
 import '../../widgets/text_widget.dart';
 
 class CategoryAppBar extends StatelessWidget with PreferredSizeWidget {

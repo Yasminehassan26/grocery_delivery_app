@@ -1,27 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import '../models/category_model.dart';
+import '../models/category.dart';
 
+class CategoriesService  {
 
-class Categories with ChangeNotifier {
-  late List<Category> _items;
+ 
 
-  List<Category> get items {
-    return _items;
-  }
-
-  set items(List<Category> input) {
-    _items = input;
-    
-  }
-
-  Category findById(String id) {
-    return _items.firstWhere((cat) => cat.name == id);
-  }
 
   void addCategory() {
-    // _items.add(value);
-    notifyListeners();
   }
 
   // Stream<List<Category>> get categories {
@@ -36,12 +22,12 @@ class Categories with ChangeNotifier {
   //   return res;
   // }
 
-  Future<List<Category>> get categories async {
+  Future<List<Category>> getCategories() async {
+
     QuerySnapshot<Map<String, dynamic>> qShot =
         await FirebaseFirestore.instance.collection('categories').get();
     List<Category> res =
         qShot.docs.map((e) => Category.fromJson(e.data())).toList();
-    items = res;
     return res;
   }
 }

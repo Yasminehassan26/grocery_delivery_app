@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_delivery_app/view_models/categories_view_model.dart';
+import '../../models/category.dart';
 import '../../services/categories.dart';
 import 'widgets/carousel_widget.dart';
 import 'widgets/home_appbar_widget.dart';
 import '../widgets/text_widget.dart';
 import 'package:provider/provider.dart';
-import '../../models/category_model.dart';
 import 'widgets/categories_grid.dart';
 
 class HomePageState extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final categoriesData = Provider.of<Categories>(context);
+    final categoriesData = Provider.of<CategoriesViewModel>(context);
 
     return Scaffold(
       appBar: const HomeAppBarWidget(),
