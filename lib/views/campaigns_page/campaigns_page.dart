@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_delivery_app/views/home_page/widgets/carousel_widget.dart';
 import '../widgets/text_widget.dart';
 
 class CampaignsPage extends StatelessWidget {
@@ -6,23 +7,24 @@ class CampaignsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-        child: Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Stack(
-          children: [
-            Image.asset('assets/login.jpg',
-                width: double.infinity, height: 350, fit: BoxFit.cover),
-            Positioned(
-              bottom: 15,
-              left: 15,
-              child:
-                  TextWidget(title: 'Login', font: 38, weight: FontWeight.bold),
-            )
-          ],
-        ),
-      ],
-    ));
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Colors.white,
+        elevation: 1,
+        title: const FittedBox(
+            fit: BoxFit.scaleDown,
+            child: TextWidget(
+              title: "Campaigns",
+              weight: FontWeight.bold,
+              font: 20,
+            )),
+      ),
+      body: SingleChildScrollView(
+          child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: const [CarouselWidget()],
+      )),
+    );
   }
 }

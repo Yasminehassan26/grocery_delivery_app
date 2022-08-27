@@ -16,7 +16,6 @@ import 'views/login_register_pages/login_page.dart';
 import 'views/login_register_pages/registration_page.dart';
 import 'views/splash_page.dart';
 
-
 Future main() async {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
@@ -35,7 +34,6 @@ class MyApp extends StatelessWidget {
         providers: [
           ChangeNotifierProvider<AuthenticationViewModel>(
               create: (context) => AuthenticationViewModel()),
-
           ChangeNotifierProvider<Categories>(create: (context) => Categories()),
           ChangeNotifierProvider<ProductsViewModel>(
               create: (context) => ProductsViewModel()),
@@ -52,6 +50,7 @@ class MyApp extends StatelessWidget {
               brightness: Brightness.light,
               primarySwatch: Colors.green,
               secondaryHeaderColor: Colors.grey,
+              backgroundColor: const Color(0xffE5E5E5),
             ),
             darkTheme: ThemeData(brightness: Brightness.dark),
             // themeMode: ThemeMode.dark,

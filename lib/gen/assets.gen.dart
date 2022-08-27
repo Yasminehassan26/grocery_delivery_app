@@ -9,8 +9,8 @@
 
 import 'package:flutter/widgets.dart';
 
-class AssetsProfileIconsGen {
-  const AssetsProfileIconsGen();
+class $AssetsProfileIconsGen {
+  const $AssetsProfileIconsGen();
 
   /// File path: assets/profileIcons/cards.svg
   String get cards => 'assets/profileIcons/cards.svg';
@@ -47,13 +47,13 @@ class Assets {
   Assets._();
 
   static const AssetGenImage carousel = AssetGenImage('assets/carousel.jpg');
-  static const AssetGenImage cartJpg = AssetGenImage('assets/cart.jpg');
-  static const AssetGenImage cartPng = AssetGenImage('assets/cart.png');
+  static const String checkout = 'assets/checkout.svg';
+  static const String emptyCart = 'assets/emptyCart.svg';
+  static const String intro = 'assets/intro.svg';
   static const AssetGenImage login = AssetGenImage('assets/login.jpg');
   static const AssetGenImage logo = AssetGenImage('assets/logo.png');
   static const AssetGenImage logoo = AssetGenImage('assets/logoo.png');
-  static const AssetGenImage order = AssetGenImage('assets/order.jpg');
-  static const AssetsProfileIconsGen profileIcons = AssetsProfileIconsGen();
+  static const $AssetsProfileIconsGen profileIcons = $AssetsProfileIconsGen();
   static const AssetGenImage splash = AssetGenImage('assets/splash.png');
 }
 

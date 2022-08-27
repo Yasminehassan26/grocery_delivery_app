@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../widgets/text_widget.dart';
 
-import '../../../resources/assets.gen.dart';
+import '../../../gen/assets.gen.dart';
 
 class HomeAppBarWidget extends StatelessWidget with PreferredSizeWidget {
   const HomeAppBarWidget({

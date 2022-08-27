@@ -4,7 +4,7 @@ import 'widgets/cart_appBar.dart';
 import 'widgets/cart_grid.dart';
 import 'widgets/checkout_button.dart';
 import 'widgets/checkout_order.dart';
-import 'widgets/empty_card.dart';
+import 'widgets/empty_cart.dart';
 import 'package:provider/provider.dart';
 
 class CartPage extends StatelessWidget {

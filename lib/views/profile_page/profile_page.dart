@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../resources/assets.gen.dart';
+import '../../gen/assets.gen.dart';
 import 'widgets/listTile_widget.dart';
 import 'widgets/toggle_button.dart';
 import '../widgets/text_widget.dart';
