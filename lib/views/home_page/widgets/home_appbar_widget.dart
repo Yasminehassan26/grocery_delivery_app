@@ -10,7 +10,6 @@ class HomeAppBarWidget extends StatelessWidget with PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return AppBar(
       backgroundColor: Colors.white,
       foregroundColor: Colors.black,
@@ -27,7 +26,7 @@ class HomeAppBarWidget extends StatelessWidget with PreferredSizeWidget {
             ]),
             child: Image.asset(
               fit: BoxFit.cover,
-               Assets.logo.keyName,
+              Assets.logoo.keyName,
             ),
           ),
           const SizedBox(width: 10),
@@ -45,9 +44,7 @@ class HomeAppBarWidget extends StatelessWidget with PreferredSizeWidget {
             IconButton(
               icon: const Icon(Icons.place,
                   color: Color.fromARGB(255, 82, 82, 82)),
-              onPressed: () {
-              
-              },
+              onPressed: () {},
             ),
             const TextWidget(
               title: 'Home',

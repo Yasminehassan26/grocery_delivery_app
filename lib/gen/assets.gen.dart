@@ -51,7 +51,6 @@ class Assets {
   static const String emptyCart = 'assets/emptyCart.svg';
   static const String intro = 'assets/intro.svg';
   static const AssetGenImage login = AssetGenImage('assets/login.jpg');
-  static const AssetGenImage logo = AssetGenImage('assets/logo.png');
   static const AssetGenImage logoo = AssetGenImage('assets/logoo.png');
   static const $AssetsProfileIconsGen profileIcons = $AssetsProfileIconsGen();
   static const AssetGenImage splash = AssetGenImage('assets/splash.png');
