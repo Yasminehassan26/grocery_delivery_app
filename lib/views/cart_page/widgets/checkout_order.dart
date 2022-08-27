@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_delivery_app/resources/assets.gen.dart';
 import 'package:grocery_delivery_app/views/login_register_pages/Wrapper_page.dart';
 import 'package:grocery_delivery_app/views/widgets/text_widget.dart';
 import '../../widgets/elevated_button_widget.dart';
@@ -19,11 +20,11 @@ class checkoutOrderPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(60),
               child: Image.asset(
-                'assets/order.jpg',
+                Assets.order.keyName,
                 fit: BoxFit.fill,
               ),
             ),
-            TextWidget(
+            const TextWidget(
                 title: "Your Order Has Been Accepted",
                 font: 24,
                 weight: FontWeight.bold,
@@ -50,7 +51,7 @@ class checkoutOrderPage extends StatelessWidget {
             ),
             ElevatedButtonWidget('Track Order', () => {}),
             TextButton(
-              child: TextWidget(
+              child: const TextWidget(
                 title: "Back Home",
                 weight: FontWeight.bold,
                 textAlign: TextAlign.center,

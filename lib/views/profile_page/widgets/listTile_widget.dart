@@ -7,7 +7,7 @@ class ListTileWidget extends StatelessWidget {
   final String leadingIcon;
   final String title;
 
-  const ListTileWidget(this.leadingIcon, this.title, this.trailingIcon, {Key? key})
+   ListTileWidget(this.leadingIcon, this.title, this.trailingIcon, {Key? key})
       : super(key: key);
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_delivery_app/resources/assets.gen.dart';
 import 'package:grocery_delivery_app/views/widgets/text_widget.dart';
 import 'widgets/login_widget.dart';
 
@@ -15,9 +16,9 @@ class LoginPage extends StatelessWidget {
       children: [
         Stack(
           children: [
-            Image.asset('assets/login.jpg',
+            Image.asset(Assets.login.path,
                 width: double.infinity, height: 350, fit: BoxFit.cover),
-            Positioned(
+            const Positioned(
               bottom: 15,
               left: 15,
               child:

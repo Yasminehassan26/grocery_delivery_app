@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_delivery_app/views/widgets/text_widget.dart';
 
+import '../../../resources/assets.gen.dart';
+
 class HomeAppBarWidget extends StatelessWidget with PreferredSizeWidget {
   const HomeAppBarWidget({
     Key? key,
@@ -25,13 +27,13 @@ class HomeAppBarWidget extends StatelessWidget with PreferredSizeWidget {
             ]),
             child: Image.asset(
               fit: BoxFit.cover,
-              "assets/logo.png",
+               Assets.logo.keyName,
             ),
           ),
           const SizedBox(width: 10),
-          TextWidget(
+          const TextWidget(
             title: 'Carrot',
-            color: const Color.fromARGB(255, 82, 82, 82),
+            color: Color.fromARGB(255, 82, 82, 82),
             font: 20,
             weight: FontWeight.w500,
           )
@@ -47,9 +49,9 @@ class HomeAppBarWidget extends StatelessWidget with PreferredSizeWidget {
               
               },
             ),
-            TextWidget(
+            const TextWidget(
               title: 'Home',
-              color: const Color.fromARGB(255, 82, 82, 82),
+              color: Color.fromARGB(255, 82, 82, 82),
               font: 18,
               weight: FontWeight.w500,
             ),

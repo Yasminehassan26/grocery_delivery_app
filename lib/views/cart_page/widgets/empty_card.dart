@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_delivery_app/resources/assets.gen.dart';
 import 'package:grocery_delivery_app/views/login_register_pages/Wrapper_page.dart';
 import 'package:grocery_delivery_app/views/widgets/text_widget.dart';
 import '../../widgets/elevated_button_widget.dart';
@@ -15,11 +16,11 @@ class EmptyCart extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(60),
               child: Image.asset(
-                'assets/cart.jpg',
+                Assets.cartJpg.path,
                 fit: BoxFit.fill,
               ),
             ),
-            TextWidget(
+            const TextWidget(
                 title: "Your cart is empty",
                 font: 24,
                 weight: FontWeight.bold,

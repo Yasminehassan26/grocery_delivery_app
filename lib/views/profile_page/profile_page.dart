@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:grocery_delivery_app/resources/assets.gen.dart';
 import 'package:grocery_delivery_app/views/profile_page/widgets/listTile_widget.dart';
 import 'package:grocery_delivery_app/views/profile_page/widgets/toggle_button.dart';
 import 'package:grocery_delivery_app/views/widgets/text_widget.dart';
@@ -18,7 +19,7 @@ class ProfilePage extends StatelessWidget {
         appBar: AppBar(
           centerTitle: true,
           backgroundColor: Colors.white,
-          title: TextWidget(
+          title:  const TextWidget(
             title: "Profile",
             weight: FontWeight.bold,
             font: 20,
@@ -35,9 +36,9 @@ class ProfilePage extends StatelessWidget {
                   color: Theme.of(context).primaryColor,
                   weight: FontWeight.bold,
                 ),
-                const ListTileWidget('assets/profileIcons/profile.svg',
+                ListTileWidget(Assets.profileIcons.profile,
                     "Edit Profile", Icons.arrow_forward_ios),
-                const ListTileWidget('assets/profileIcons/key.svg', "Change Password",
+                 ListTileWidget(Assets.profileIcons.key, "Change Password",
                     Icons.arrow_forward_ios),
                 const SizedBox(
                   height: 30,
@@ -47,13 +48,13 @@ class ProfilePage extends StatelessWidget {
                   color: Theme.of(context).primaryColor,
                   weight: FontWeight.bold,
                 ),
-                const ListTileWidget('assets/profileIcons/orders.svg', "Orders",
+                 ListTileWidget(Assets.profileIcons.orders, "Orders",
                     Icons.arrow_forward_ios),
-                const ListTileWidget('assets/profileIcons/favorite.svg', "Favorites",
+                 ListTileWidget(Assets.profileIcons.favorite, "Favorites",
                     Icons.arrow_forward_ios),
-                const ListTileWidget('assets/profileIcons/location.svg',
+                 ListTileWidget(Assets.profileIcons.location,
                     "My Addresses", Icons.arrow_forward_ios),
-                const ListTileWidget('assets/profileIcons/cards.svg', "My Cards",
+                 ListTileWidget(Assets.profileIcons.cards, "My Cards",
                     Icons.arrow_forward_ios),
                 const SizedBox(
                   height: 30,
@@ -63,11 +64,11 @@ class ProfilePage extends StatelessWidget {
                   color: Theme.of(context).primaryColor,
                   weight: FontWeight.bold,
                 ),
-                const ToggleButton(
-                    'assets/profileIcons/notification.svg', "Notifications"),
-                const ToggleButton('assets/profileIcons/mode.svg', "Dark Mode"),
+                 ToggleButton(
+                    Assets.profileIcons.notification, "Notifications"),
+                 ToggleButton(Assets.profileIcons.mode, "Dark Mode"),
                 ListTile(
-                  leading: SvgPicture.asset('assets/profileIcons/language.svg'),
+                  leading: SvgPicture.asset(Assets.profileIcons.language),
                   title: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -76,12 +77,12 @@ class ProfilePage extends StatelessWidget {
                         color: Theme.of(context).secondaryHeaderColor,
                         font: 18,
                       ),
-                      Row(children: [
+                      Row(children: const [
                         TextWidget(
                           title: "English",
                           font: 16,
                         ),
-                        const Icon(Icons.arrow_forward_ios),
+                        Icon(Icons.arrow_forward_ios),
                       ]),
                     ],
                   ),
@@ -90,7 +91,7 @@ class ProfilePage extends StatelessWidget {
                   onTap: () {
                     authService.signOut();
                   },
-                  leading: SvgPicture.asset('assets/profileIcons/logout.svg'),
+                  leading: SvgPicture.asset(Assets.profileIcons.logout),
                   title: TextWidget(
                     title: 'Logout',
                     color: Theme.of(context).secondaryHeaderColor,
