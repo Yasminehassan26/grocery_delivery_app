@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_delivery_app/resources/assets.gen.dart';
-import 'package:grocery_delivery_app/views/widgets/text_widget.dart';
+import '../../resources/assets.gen.dart';
+import '../widgets/text_widget.dart';
 import 'widgets/login_widget.dart';
 
 class LoginPage extends StatelessWidget {

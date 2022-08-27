@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_delivery_app/services/categories.dart';
-import 'package:grocery_delivery_app/views/home_page/widgets/category_item.dart';
+import '../../../services/categories.dart';
+import 'carousel_widget.dart';
+import 'category_item.dart';
 import 'package:provider/provider.dart';
 
 class CategoriesGrid extends StatelessWidget {
@@ -11,20 +12,27 @@ class CategoriesGrid extends StatelessWidget {
     final categoriesData = Provider.of<Categories>(context);
     final categories = categoriesData.items;
     return Expanded(
-      child: GridView.builder(
-        padding: const EdgeInsets.all(10),
-        shrinkWrap: true,
-        itemCount: categories.length,
-        itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
-          value: categories[i],
-          child: Card(elevation: 5, child: CategoryItem()),
-        ),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 3,
-          childAspectRatio: 0.75,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
-        ),
+      child: Column(
+        children: [
+          const CarouselWidget(),
+          Expanded(
+            child: GridView.builder(
+              padding: const EdgeInsets.all(10),
+              shrinkWrap: true,
+              itemCount: categories.length,
+              itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
+                value: categories[i],
+                child: Card(elevation: 5, child: CategoryItem()),
+              ),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3,
+                childAspectRatio: 0.75,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

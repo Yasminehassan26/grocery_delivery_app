@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/widgets.dart';
-import 'package:grocery_delivery_app/models/product_model.dart';
-import 'package:grocery_delivery_app/services/favorites.dart';
+import '../models/product_model.dart';
+import '../services/favorites.dart';
 
 class UserFavoritesViewModel with ChangeNotifier {
   late List<Product> _items;

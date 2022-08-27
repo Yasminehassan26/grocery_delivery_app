@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'package:grocery_delivery_app/view_models/authentication_view_model.dart';
-import 'package:grocery_delivery_app/view_models/cart_view_model.dart';
-import 'package:grocery_delivery_app/view_models/favorites_view_model.dart';
-import 'package:grocery_delivery_app/views/home_page/main_page.dart';
-import 'package:grocery_delivery_app/views/login_register_pages/login_page.dart';
+import '../../view_models/authentication_view_model.dart';
+import '../../view_models/cart_view_model.dart';
+import '../../view_models/favorites_view_model.dart';
+import '../home_page/main_page.dart';
+import 'login_page.dart';
 
 class Wrapper extends StatelessWidget {
   const Wrapper({Key? key}) : super(key: key);

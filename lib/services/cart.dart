@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:grocery_delivery_app/models/user_cart.dart';
-import 'package:grocery_delivery_app/services/authentication_service.dart';
+import '../models/user_cart.dart';
+import 'authentication_service.dart';
 
 class CartService {
   Future<void> updateCart(List<UserCart> items) async {

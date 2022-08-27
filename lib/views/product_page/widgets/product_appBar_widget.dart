@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_delivery_app/models/product_model.dart';
-import 'package:grocery_delivery_app/view_models/favorites_view_model.dart';
+import '../../../models/product_model.dart';
+import '../../../view_models/favorites_view_model.dart';
 import 'package:provider/provider.dart';
 import '../../widgets/text_widget.dart';
 

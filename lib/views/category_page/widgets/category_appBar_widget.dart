@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../models/category_model.dart';
 import '../../widgets/text_widget.dart';
 

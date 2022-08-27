@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:grocery_delivery_app/models/category_model.dart';
+import '../models/category_model.dart';
 
 
 class Categories with ChangeNotifier {

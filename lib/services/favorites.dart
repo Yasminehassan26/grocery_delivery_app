@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/widgets.dart';
-import 'package:grocery_delivery_app/models/product_model.dart';
+import '../models/product_model.dart';
 
 import 'authentication_service.dart';
 

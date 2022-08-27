@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_delivery_app/views/widgets/text_widget.dart';
+
+import '../widgets/text_widget.dart';
 
 class SearchPage extends StatelessWidget {
   const SearchPage({Key? key}) : super(key: key);

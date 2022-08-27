@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_delivery_app/models/category_model.dart';
-import 'package:grocery_delivery_app/view_models/products_view_model.dart';
-import 'package:grocery_delivery_app/views/widgets/text_widget.dart';
+import '../../../models/category_model.dart';
+import '../../../view_models/products_view_model.dart';
+import '../../widgets/text_widget.dart';
 import 'package:provider/provider.dart';
 
 import '../../category_page/categoryPage.dart';
@@ -24,7 +24,7 @@ class CategoryItem extends StatelessWidget {
         );
       }),
       child: Container(
-        padding: EdgeInsets.only(top: 10),
+        padding: const EdgeInsets.only(top: 10),
         height: double.maxFinite,
         width: double.maxFinite,
         child: GridTile(

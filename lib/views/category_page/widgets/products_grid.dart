@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_delivery_app/views/category_page/widgets/product_item.dart';
+import 'product_item.dart';
 import 'package:provider/provider.dart';
 import '../../../view_models/products_view_model.dart';
 

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_delivery_app/view_models/products_view_model.dart';
-import 'package:grocery_delivery_app/view_models/cart_view_model.dart';
-import 'package:grocery_delivery_app/views/product_page/widgets/product_appBar_widget.dart';
-import 'package:grocery_delivery_app/views/product_page/widgets/product_description.dart';
-import 'package:grocery_delivery_app/views/product_page/widgets/product_details.dart';
-import 'package:grocery_delivery_app/views/product_page/widgets/product_cart.dart';
-import 'package:grocery_delivery_app/views/widgets/elevated_button_widget.dart';
+import '../../view_models/products_view_model.dart';
+import '../../view_models/cart_view_model.dart';
+import 'widgets/product_appBar_widget.dart';
+import 'widgets/product_description.dart';
+import 'widgets/product_details.dart';
+import 'widgets/product_cart.dart';
+import '../widgets/elevated_button_widget.dart';
 import 'package:provider/provider.dart';
 
 

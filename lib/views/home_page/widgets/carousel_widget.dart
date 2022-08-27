@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import '../../../resources/assets.gen.dart';
 
 class CarouselWidget extends StatelessWidget {
   const CarouselWidget({Key? key}) : super(key: key);
@@ -7,12 +8,12 @@ class CarouselWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<String> imgList = [
-      'assets/carousel.jpg',
-      'assets/carousel.jpg',
-      'assets/carousel.jpg',
-      'assets/carousel.jpg',
-      'assets/carousel.jpg',
-      'assets/carousel.jpg',
+      Assets.carousel.keyName,
+      Assets.carousel.keyName,
+      Assets.carousel.keyName,
+      Assets.carousel.keyName,
+      Assets.carousel.keyName,
+      Assets.carousel.keyName,
     ];
 
     final List<Widget> imageSliders = imgList

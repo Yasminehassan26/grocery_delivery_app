@@ -1,7 +1,8 @@
 import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
-import 'package:grocery_delivery_app/models/product_model.dart';
+
+import 'product_model.dart';
 
 List<Category> DataFromJson(String str) =>
     List<Category>.from(json.decode(str).map((x) => Category.fromJson(x)));

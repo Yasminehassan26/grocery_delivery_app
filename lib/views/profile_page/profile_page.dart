@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:grocery_delivery_app/resources/assets.gen.dart';
-import 'package:grocery_delivery_app/views/profile_page/widgets/listTile_widget.dart';
-import 'package:grocery_delivery_app/views/profile_page/widgets/toggle_button.dart';
-import 'package:grocery_delivery_app/views/widgets/text_widget.dart';
+import '../../resources/assets.gen.dart';
+import 'widgets/listTile_widget.dart';
+import 'widgets/toggle_button.dart';
+import '../widgets/text_widget.dart';
 import 'package:provider/provider.dart';
 
 import '../../view_models/authentication_view_model.dart';

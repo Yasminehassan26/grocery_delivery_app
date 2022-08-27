@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_delivery_app/views/widgets/text_widget.dart';
+import 'text_widget.dart';
 
 class ElevatedButtonWidget extends StatelessWidget {
   // final String email;

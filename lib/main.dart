@@ -1,20 +1,20 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:grocery_delivery_app/services/categories.dart';
-import 'package:grocery_delivery_app/view_models/authentication_view_model.dart';
-import 'package:grocery_delivery_app/view_models/products_view_model.dart';
-import 'package:grocery_delivery_app/services/utils.dart';
-import 'package:grocery_delivery_app/view_models/cart_view_model.dart';
-import 'package:grocery_delivery_app/view_models/favorites_view_model.dart';
-import 'package:grocery_delivery_app/views/cart_page/widgets/checkout_order.dart';
-import 'package:grocery_delivery_app/views/category_page/categoryPage.dart';
-import 'package:grocery_delivery_app/views/login_register_pages/Wrapper_page.dart';
-import 'package:grocery_delivery_app/views/product_page/product_page.dart';
+import 'services/categories.dart';
+import 'view_models/authentication_view_model.dart';
+import 'view_models/products_view_model.dart';
+import 'services/utils.dart';
+import 'view_models/cart_view_model.dart';
+import 'view_models/favorites_view_model.dart';
+import 'views/cart_page/widgets/checkout_order.dart';
+import 'views/category_page/categoryPage.dart';
+import 'views/login_register_pages/Wrapper_page.dart';
+import 'views/product_page/product_page.dart';
 import 'package:provider/provider.dart';
-import 'package:grocery_delivery_app/views/login_register_pages/login_page.dart';
-import 'package:grocery_delivery_app/views/login_register_pages/registration_page.dart';
-import 'package:grocery_delivery_app/views/splash_page.dart';
+import 'views/login_register_pages/login_page.dart';
+import 'views/login_register_pages/registration_page.dart';
+import 'views/splash_page.dart';
 
 
 Future main() async {

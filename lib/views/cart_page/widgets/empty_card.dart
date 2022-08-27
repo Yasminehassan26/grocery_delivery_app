@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_delivery_app/resources/assets.gen.dart';
-import 'package:grocery_delivery_app/views/login_register_pages/Wrapper_page.dart';
-import 'package:grocery_delivery_app/views/widgets/text_widget.dart';
+import '../../../resources/assets.gen.dart';
+import '../../login_register_pages/Wrapper_page.dart';
+import '../../widgets/text_widget.dart';
 import '../../widgets/elevated_button_widget.dart';
 
 class EmptyCart extends StatelessWidget {

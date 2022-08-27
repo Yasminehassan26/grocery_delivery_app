@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_delivery_app/models/product_model.dart';
-import 'package:grocery_delivery_app/view_models/cart_view_model.dart';
-import 'package:grocery_delivery_app/views/category_page/widgets/cart_button.dart';
-import 'package:grocery_delivery_app/views/category_page/widgets/icon_button.dart';
-import 'package:grocery_delivery_app/views/product_page/product_page.dart';
-import 'package:grocery_delivery_app/views/widgets/text_widget.dart';
+import '../../../models/product_model.dart';
+import '../../../view_models/cart_view_model.dart';
+import 'cart_button.dart';
+import 'icon_button.dart';
+import '../../product_page/product_page.dart';
+import '../../widgets/text_widget.dart';
 import 'package:provider/provider.dart';
 
 class ProductItem extends StatefulWidget {

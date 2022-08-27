@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_delivery_app/models/product_model.dart';
+import '../models/product_model.dart';
 
 class ProductsViewModel with ChangeNotifier {
   late List<Product> _items;

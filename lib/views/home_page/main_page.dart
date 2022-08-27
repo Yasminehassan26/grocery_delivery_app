@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_delivery_app/views/campaigns_page/campaigns_page.dart';
-import 'package:grocery_delivery_app/views/cart_page/cart_page.dart';
-import 'package:grocery_delivery_app/views/home_page/home_page.dart';
-import 'package:grocery_delivery_app/views/profile_page/profile_page.dart';
-import 'package:grocery_delivery_app/views/search_page/search_page.dart';
+import '../campaigns_page/campaigns_page.dart';
+import '../cart_page/cart_page.dart';
+import 'home_page.dart';
+import '../profile_page/profile_page.dart';
+import '../search_page/search_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
