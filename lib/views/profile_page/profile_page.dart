@@ -3,12 +3,17 @@ import 'package:flutter_svg/svg.dart';
 import 'package:grocery_delivery_app/views/profile_page/widgets/listTile_widget.dart';
 import 'package:grocery_delivery_app/views/profile_page/widgets/toggle_button.dart';
 import 'package:grocery_delivery_app/views/widgets/text_widget.dart';
+import 'package:provider/provider.dart';
+
+import '../../view_models/authentication_view_model.dart';
 
 class ProfilePage extends StatelessWidget {
   ProfilePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final authService = Provider.of<AuthenticationViewModel>(context);
+
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
@@ -30,9 +35,9 @@ class ProfilePage extends StatelessWidget {
                   color: Theme.of(context).primaryColor,
                   weight: FontWeight.bold,
                 ),
-                listTileWidget('assets/profileIcons/profile.svg',
+                const ListTileWidget('assets/profileIcons/profile.svg',
                     "Edit Profile", Icons.arrow_forward_ios),
-                listTileWidget('assets/profileIcons/key.svg', "Change Password",
+                const ListTileWidget('assets/profileIcons/key.svg', "Change Password",
                     Icons.arrow_forward_ios),
                 const SizedBox(
                   height: 30,
@@ -42,13 +47,13 @@ class ProfilePage extends StatelessWidget {
                   color: Theme.of(context).primaryColor,
                   weight: FontWeight.bold,
                 ),
-                listTileWidget('assets/profileIcons/orders.svg', "Orders",
+                const ListTileWidget('assets/profileIcons/orders.svg', "Orders",
                     Icons.arrow_forward_ios),
-                listTileWidget('assets/profileIcons/favorite.svg', "Favorites",
+                const ListTileWidget('assets/profileIcons/favorite.svg', "Favorites",
                     Icons.arrow_forward_ios),
-                listTileWidget('assets/profileIcons/location.svg',
+                const ListTileWidget('assets/profileIcons/location.svg',
                     "My Addresses", Icons.arrow_forward_ios),
-                listTileWidget('assets/profileIcons/cards.svg', "My Cards",
+                const ListTileWidget('assets/profileIcons/cards.svg', "My Cards",
                     Icons.arrow_forward_ios),
                 const SizedBox(
                   height: 30,
@@ -58,9 +63,9 @@ class ProfilePage extends StatelessWidget {
                   color: Theme.of(context).primaryColor,
                   weight: FontWeight.bold,
                 ),
-                ToggleButton(
+                const ToggleButton(
                     'assets/profileIcons/notification.svg', "Notifications"),
-                ToggleButton('assets/profileIcons/mode.svg', "Dark Mode"),
+                const ToggleButton('assets/profileIcons/mode.svg', "Dark Mode"),
                 ListTile(
                   leading: SvgPicture.asset('assets/profileIcons/language.svg'),
                   title: Row(
@@ -76,12 +81,15 @@ class ProfilePage extends StatelessWidget {
                           title: "English",
                           font: 16,
                         ),
-                        Icon(Icons.arrow_forward_ios),
+                        const Icon(Icons.arrow_forward_ios),
                       ]),
                     ],
                   ),
                 ),
                 ListTile(
+                  onTap: () {
+                    authService.signOut();
+                  },
                   leading: SvgPicture.asset('assets/profileIcons/logout.svg'),
                   title: TextWidget(
                     title: 'Logout',

@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_delivery_app/views/cart_page/widgets/cart_appBar.dart';
 import 'package:grocery_delivery_app/views/login_register_pages/Wrapper_page.dart';
 import 'package:grocery_delivery_app/views/widgets/text_widget.dart';
-
-import '../../home_page/main_page.dart';
 import '../../widgets/elevated_button_widget.dart';
 
 class checkoutOrderPage extends StatelessWidget {
   static const routeName = '/checkout';
+
+  checkoutOrderPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +35,7 @@ class checkoutOrderPage extends StatelessWidget {
               title: "We’ve accepted your order, and we’re",
               textAlign: TextAlign.center,
               font: 18,
-              color:Theme.of(context).secondaryHeaderColor,
+              color: Theme.of(context).secondaryHeaderColor,
             ),
             const SizedBox(
               height: 8,
@@ -44,17 +43,12 @@ class checkoutOrderPage extends StatelessWidget {
             TextWidget(
                 title: "getting it ready.",
                 font: 18,
-                color:Theme.of(context).secondaryHeaderColor,
+                color: Theme.of(context).secondaryHeaderColor,
                 textAlign: TextAlign.center),
             const SizedBox(
               height: 10,
             ),
-            ElevatedButtonWidget(
-                'Track Order',
-                () => {
-                      //   Navigator.of(context)
-                      //       .pushReplacementNamed(MainPage.routeName)
-                    }),
+            ElevatedButtonWidget('Track Order', () => {}),
             TextButton(
               child: TextWidget(
                 title: "Back Home",

@@ -5,26 +5,20 @@ import 'package:grocery_delivery_app/views/home_page/widgets/home_appbar_widget.
 import 'package:grocery_delivery_app/views/widgets/text_widget.dart';
 import 'package:provider/provider.dart';
 import '../../models/category_model.dart';
-
-import '../../services/authentication_service.dart';
-import '../../services/cart.dart';
-import '../../services/user_favorites.dart';
 import 'widgets/categories_grid.dart';
 
 class HomePageState extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final categoriesData = Provider.of<Categories>(context);
-    final favorites = Provider.of<UserFavorites>(context);
-    final cart = Provider.of<Cart>(context);
-    final authService = Provider.of<AuthenticationService>(context);
+
 
     return Scaffold(
-      appBar: HomeAppBarWidget(),
+      appBar: const HomeAppBarWidget(),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          CarouselWidget(),
+          const CarouselWidget(),
           FutureBuilder<List<Category>>(
               future: categoriesData.categories,
               builder: (context, snapshot) {

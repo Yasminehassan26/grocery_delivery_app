@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_delivery_app/services/authentication_service.dart';
-import 'package:grocery_delivery_app/services/cart.dart';
-import 'package:grocery_delivery_app/views/home_page/main_page.dart';
+import 'package:grocery_delivery_app/view_models/authentication_view_model.dart';
 import 'package:grocery_delivery_app/views/login_register_pages/widgets/password_input.dart';
 import 'package:grocery_delivery_app/views/widgets/text_widget.dart';
 import 'package:provider/provider.dart';
-
-import '../../../services/user_favorites.dart';
 import '../../widgets/elevated_button_widget.dart';
 import '../../widgets/text_button_widget.dart';
 import 'input_widget.dart';
@@ -20,44 +16,15 @@ class LoginBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final authService = Provider.of<AuthenticationService>(context);
+    final authService = Provider.of<AuthenticationViewModel>(context);
 
-    // List<Category> data = DataFromJson(json.encode(jsonn));
 
-    // Future addProducts() async {
-    //   CollectionReference addCat =
-    //       FirebaseFirestore.instance.collection('categories');
 
-    //   data.forEach((element) async {
-    //     var result = await addCat.add({
-    //       'name': element.name,
-    //       "image": element.image,
-    //       'items': element.items.map(
-    //         (item) {
-    //           return {
-    //             "id": item.id,
-    //             "name": item.name,
-    //             "weight": item.weight,
-    //             "price": item.price,
-    //             "image": item.image,
-    //             "description": item.description,
-    //           };
-    //         },
-    //       ).toList(),
-    //     });
-    //   });
-    // }
+    void _login() {
+      authService.signIn(emailController.text, passController.text);
 
-    void _login() async {
-      var res =
-          await authService.signIn(emailController.text, passController.text);
-      // if (res) {
-      //   // favorites.initializeFavorites(authService.userId);
-      //   // cart.initializeCart(authService.userId);
-      //   // Navigator.of(context).pop();
-      // }
+      // await addProducts();
     }
-    // await addProducts();
 
     return Column(children: [
       Form(

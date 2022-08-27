@@ -1,4 +1,4 @@
-import 'package:email_validator/email_validator.dart';
+// import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 
 class InputWidget extends StatelessWidget {
@@ -6,7 +6,7 @@ class InputWidget extends StatelessWidget {
   final String title;
   final String message;
 
-  InputWidget(this.textController, this.title, this.message);
+  const InputWidget(this.textController, this.title, this.message, {Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return TextFormField(

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_delivery_app/models/product_model.dart';
+import 'package:grocery_delivery_app/view_models/cart_view_model.dart';
 import 'package:provider/provider.dart';
-
 import '../../../models/user_cart.dart';
-import '../../../services/authentication_service.dart';
-import '../../../services/cart.dart';
 import '../../widgets/text_widget.dart';
 
 class ProfileCartButton extends StatelessWidget {
@@ -17,15 +15,14 @@ class ProfileCartButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final authService = Provider.of<AuthenticationService>(context);
-    final cart = Provider.of<Cart>(context);
+    final cart = Provider.of<CartViewModel>(context);
     UserCart cartProduct = cart.findById(product.id);
     void increment() {
-      cart.incrementProduct(cartProduct.product.id, authService.getUser());
+      cart.incrementProduct(cartProduct.product.id);
     }
 
     void decrement() {
-      cart.decrementProduct(cartProduct.product.id, authService.getUser());
+      cart.decrementProduct(cartProduct.product.id);
     }
 
     // UserCart p = cart.findById(id);

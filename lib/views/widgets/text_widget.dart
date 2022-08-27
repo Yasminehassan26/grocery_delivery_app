@@ -7,7 +7,7 @@ class TextWidget extends StatelessWidget {
   final Color color;
   final FontWeight weight;
   final TextAlign textAlign;
-   TextWidget(
+   const TextWidget(
       {Key? key, required this.title,
       this.font = 14,
       this.color = Colors.black,

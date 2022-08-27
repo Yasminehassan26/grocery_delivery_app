@@ -3,7 +3,7 @@ import 'package:grocery_delivery_app/views/widgets/text_widget.dart';
 import 'widgets/login_widget.dart';
 
 class LoginPage extends StatelessWidget {
-  LoginPage({Key? key}) : super(key: key);
+  const LoginPage({Key? key}) : super(key: key);
   static const routeName = '/login';
 
   @override

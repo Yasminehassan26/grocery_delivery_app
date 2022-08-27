@@ -1,9 +1,7 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:grocery_delivery_app/models/product_model.dart';
-import 'package:grocery_delivery_app/services/authentication_service.dart';
+import 'package:grocery_delivery_app/view_models/favorites_view_model.dart';
 import 'package:provider/provider.dart';
-import '../../../services/user_favorites.dart';
 import '../../widgets/text_widget.dart';
 
 class ProductAppBar extends StatelessWidget with PreferredSizeWidget {
@@ -16,9 +14,7 @@ class ProductAppBar extends StatelessWidget with PreferredSizeWidget {
   void find() async {}
   @override
   Widget build(BuildContext context) {
-    final favorites = Provider.of<UserFavorites>(context);
-    final authService = Provider.of<AuthenticationService>(context);
-
+    final favorites = Provider.of<UserFavoritesViewModel>(context);
     return AppBar(
       centerTitle: true,
       backgroundColor: Colors.white,
@@ -37,7 +33,7 @@ class ProductAppBar extends StatelessWidget with PreferredSizeWidget {
       ),
       actions: [
         IconButton(
-          iconSize: 25,
+          iconSize: 35,
           icon: (favorites.containsProduct(loadedProduct))
               ? const Icon(
                   Icons.favorite,
@@ -47,7 +43,7 @@ class ProductAppBar extends StatelessWidget with PreferredSizeWidget {
                   Icons.favorite_border,
                 ),
           onPressed: () {
-            favorites.manageFavorites(loadedProduct,authService.getUser());
+            favorites.manageFavorites(loadedProduct);
           },
         ),
         const SizedBox(width: 5)

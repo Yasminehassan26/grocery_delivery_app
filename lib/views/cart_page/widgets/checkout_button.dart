@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_delivery_app/view_models/cart_view_model.dart';
 import 'package:provider/provider.dart';
-
-import '../../../services/cart.dart';
 import '../../widgets/text_widget.dart';
 
 class checkoutButton extends StatelessWidget {
@@ -10,7 +9,7 @@ class checkoutButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final cart = Provider.of<Cart>(context);
+    final cart = Provider.of<CartViewModel>(context);
     double getTotalPrice() {
       return double.parse((cart.getTotalPrice()).toStringAsFixed(2));
     }

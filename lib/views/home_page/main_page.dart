@@ -2,23 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:grocery_delivery_app/views/campaigns_page/campaigns_page.dart';
 import 'package:grocery_delivery_app/views/cart_page/cart_page.dart';
 import 'package:grocery_delivery_app/views/home_page/home_page.dart';
-import 'package:grocery_delivery_app/views/cart_page/widgets/cart_appBar.dart';
 import 'package:grocery_delivery_app/views/profile_page/profile_page.dart';
 import 'package:grocery_delivery_app/views/search_page/search_page.dart';
-import 'widgets/home_appbar_widget.dart';
 
 class MainPage extends StatefulWidget {
-  static const routeName = '/main';
+  const MainPage({Key? key}) : super(key: key);
 
   @override
-  MainPageState createState() => MainPageState();
+  State<MainPage> createState() => _MainPageState();
 }
 
-class MainPageState extends State<MainPage> {
+class _MainPageState extends State<MainPage> {
   int index = 0;
 
   final screens = [
-    //add differentPages
     HomePageState(),
     SearchPage(),
     CartPage(),
@@ -37,8 +34,8 @@ class MainPageState extends State<MainPage> {
       return Scaffold(
         body: screens.elementAt(index),
         bottomNavigationBar: BottomNavigationBar(
-          selectedItemColor:Theme.of(context).primaryColor,
-          unselectedItemColor:Theme.of(context).secondaryHeaderColor,
+          selectedItemColor: Theme.of(context).primaryColor,
+          unselectedItemColor: Theme.of(context).secondaryHeaderColor,
           showUnselectedLabels: true,
           currentIndex: index,
           onTap: _selectScreen,

@@ -4,15 +4,14 @@ import 'package:flutter/material.dart';
 class PasswordInput extends StatefulWidget {
   final TextEditingController textController;
   final String message;
-  PasswordInput(this.textController, this.message);
+  const PasswordInput(this.textController, this.message, {Key? key}) : super(key: key);
 
   @override
   State<PasswordInput> createState() =>
-      _PasswordInputState(this.textController, this.message);
+      _PasswordInputState(textController,message);
 }
 
 class _PasswordInputState extends State<PasswordInput> {
-  // show the password or not
   bool _isObscure = true;
   final TextEditingController textController;
   final String message;

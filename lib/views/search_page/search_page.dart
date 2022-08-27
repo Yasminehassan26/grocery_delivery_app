@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grocery_delivery_app/views/widgets/text_widget.dart';
 
 class SearchPage extends StatelessWidget {
-  SearchPage({Key? key}) : super(key: key);
+  const SearchPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class SearchPage extends StatelessWidget {
               bottom: 15,
               left: 15,
               child:
-                  TextWidget(title: 'Login', font: 38, weight: FontWeight.bold),
+                  TextWidget(title: 'Search', font: 38, weight: FontWeight.bold),
             )
           ],
         ),

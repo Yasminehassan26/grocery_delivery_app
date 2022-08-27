@@ -7,6 +7,8 @@ import 'package:provider/provider.dart';
 class CategoryPage extends StatelessWidget {
   static const routeName = '/category';
 
+  CategoryPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final categoryName =

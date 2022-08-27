@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_delivery_app/models/user_cart.dart';
+import 'package:grocery_delivery_app/view_models/cart_view_model.dart';
 import 'package:provider/provider.dart';
 
 import '../../../services/authentication_service.dart';
@@ -12,15 +13,14 @@ class CartButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final cart = Provider.of<Cart>(context);
-    final authService = Provider.of<AuthenticationService>(context);
+    final cart = Provider.of<CartViewModel>(context);
 
     void increment() {
-      cart.incrementProduct(id, authService.getUser());
+      cart.incrementProduct(id);
     }
 
     void decrement() {
-      cart.decrementProduct(id, authService.getUser());
+      cart.decrementProduct(id);
     }
 
     UserCart p = cart.findById(id);

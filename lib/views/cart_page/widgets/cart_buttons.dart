@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_delivery_app/view_models/cart_view_model.dart';
 import 'package:provider/provider.dart';
-
 import '../../../models/user_cart.dart';
-import '../../../services/authentication_service.dart';
-import '../../../services/cart.dart';
 import '../../widgets/text_widget.dart';
 
 class TrailingCartWidget extends StatelessWidget {
@@ -16,15 +14,14 @@ class TrailingCartWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final authService = Provider.of<AuthenticationService>(context);
-    final cart = Provider.of<Cart>(context);
+    final cart = Provider.of<CartViewModel>(context);
 
     void increment() {
-      cart.incrementProduct(product.product.id, authService.getUser());
+      cart.incrementProduct(product.product.id);
     }
 
     void decrement() {
-      cart.decrementProduct(product.product.id, authService.getUser());
+      cart.decrementProduct(product.product.id);
     }
 
     // UserCart p = cart.findById(id);

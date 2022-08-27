@@ -1,23 +1,21 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:grocery_delivery_app/services/cart.dart';
 import 'package:grocery_delivery_app/services/categories.dart';
-import 'package:grocery_delivery_app/services/products.dart';
+import 'package:grocery_delivery_app/view_models/authentication_view_model.dart';
+import 'package:grocery_delivery_app/view_models/products_view_model.dart';
 import 'package:grocery_delivery_app/services/utils.dart';
+import 'package:grocery_delivery_app/view_models/cart_view_model.dart';
+import 'package:grocery_delivery_app/view_models/favorites_view_model.dart';
 import 'package:grocery_delivery_app/views/cart_page/widgets/checkout_order.dart';
 import 'package:grocery_delivery_app/views/category_page/categoryPage.dart';
 import 'package:grocery_delivery_app/views/login_register_pages/Wrapper_page.dart';
 import 'package:grocery_delivery_app/views/product_page/product_page.dart';
 import 'package:provider/provider.dart';
-
-import 'package:grocery_delivery_app/services/authentication_service.dart';
 import 'package:grocery_delivery_app/views/login_register_pages/login_page.dart';
 import 'package:grocery_delivery_app/views/login_register_pages/registration_page.dart';
 import 'package:grocery_delivery_app/views/splash_page.dart';
 
-import 'services/user_favorites.dart';
-import 'views/home_page/main_page.dart';
 
 Future main() async {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -35,17 +33,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
         providers: [
-          // Provider<AuthenticationService>(
-          //   create: (context) => AuthenticationService(),
-          // ),
-          ChangeNotifierProvider<AuthenticationService>(
-              create: (context) => AuthenticationService()),
+          ChangeNotifierProvider<AuthenticationViewModel>(
+              create: (context) => AuthenticationViewModel()),
 
           ChangeNotifierProvider<Categories>(create: (context) => Categories()),
-          ChangeNotifierProvider<Products>(create: (context) => Products()),
-          ChangeNotifierProvider<UserFavorites>(
-              create: (context) => UserFavorites()),
-          ChangeNotifierProvider<Cart>(create: (context) => Cart()),
+          ChangeNotifierProvider<ProductsViewModel>(
+              create: (context) => ProductsViewModel()),
+          ChangeNotifierProvider<UserFavoritesViewModel>(
+              create: (context) => UserFavoritesViewModel()),
+          ChangeNotifierProvider<CartViewModel>(
+              create: (context) => CartViewModel()),
         ],
         child: MaterialApp(
             scaffoldMessengerKey: Utils.messengerKey,
@@ -56,16 +53,16 @@ class MyApp extends StatelessWidget {
               primarySwatch: Colors.green,
               secondaryHeaderColor: Colors.grey,
             ),
-          darkTheme: ThemeData(brightness: Brightness.dark),
-              // themeMode: ThemeMode.dark,
+            darkTheme: ThemeData(brightness: Brightness.dark),
+            // themeMode: ThemeMode.dark,
 
-            home: SplashPage(),
+            home: const SplashPage(),
             routes: {
-              LoginPage.routeName: (ctx) => LoginPage(),
-              RegistrationPage.routeName: (ctx) => RegistrationPage(),
+              LoginPage.routeName: (ctx) => const LoginPage(),
+              RegistrationPage.routeName: (ctx) => const RegistrationPage(),
               CategoryPage.routeName: (ctx) => CategoryPage(),
-              ProductPage.routeName: (ctx) => ProductPage(),
-              Wrapper.routeName: (ctx) => Wrapper(),
+              ProductPage.routeName: (ctx) => const ProductPage(),
+              Wrapper.routeName: (ctx) => const Wrapper(),
               checkoutOrderPage.routeName: (ctx) => checkoutOrderPage(),
             }));
   }

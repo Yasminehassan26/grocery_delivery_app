@@ -5,13 +5,12 @@ import 'package:flutter_switch/flutter_switch.dart';
 
 import '../../widgets/text_widget.dart';
 
-/// A dummy switch for the Notifications switch in the [ProfileScreen]
 class ToggleButton extends StatefulWidget {
   final String title;
 
   final String path;
 
-  ToggleButton(this.path, this.title);
+  const ToggleButton(this.path, this.title, {Key? key}) : super(key: key);
 
   @override
   State<ToggleButton> createState() => _ToggleButtonState(path, title);

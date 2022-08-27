@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_delivery_app/models/product_model.dart';
-import 'package:grocery_delivery_app/services/cart.dart';
+import 'package:grocery_delivery_app/view_models/cart_view_model.dart';
 import 'package:grocery_delivery_app/views/category_page/widgets/cart_button.dart';
 import 'package:grocery_delivery_app/views/category_page/widgets/icon_button.dart';
 import 'package:grocery_delivery_app/views/product_page/product_page.dart';
@@ -8,6 +8,8 @@ import 'package:grocery_delivery_app/views/widgets/text_widget.dart';
 import 'package:provider/provider.dart';
 
 class ProductItem extends StatefulWidget {
+  const ProductItem({Key? key}) : super(key: key);
+
   @override
   ProductItemState createState() => ProductItemState();
 }
@@ -16,7 +18,7 @@ class ProductItemState extends State<ProductItem> {
   @override
   Widget build(BuildContext context) {
     final product = Provider.of<Product>(context);
-    final cart = Provider.of<Cart>(context);
+    final cart = Provider.of<CartViewModel>(context);
 
     return GridTile(
         child: Column(

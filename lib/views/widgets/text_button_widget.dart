@@ -5,7 +5,7 @@ class ButtonWidget extends StatelessWidget {
   // final String email;
   final String title;
 
-  ButtonWidget(this.title);
+  const ButtonWidget(this.title, {Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return TextButton(

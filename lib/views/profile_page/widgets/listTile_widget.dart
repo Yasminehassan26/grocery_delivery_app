@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:grocery_delivery_app/views/widgets/text_widget.dart';
 
-class listTileWidget extends StatelessWidget {
+class ListTileWidget extends StatelessWidget {
   final IconData trailingIcon;
   final String leadingIcon;
   final String title;
-  
-   listTileWidget(this.leadingIcon, this.title, this.trailingIcon, {Key? key})
+
+  const ListTileWidget(this.leadingIcon, this.title, this.trailingIcon, {Key? key})
       : super(key: key);
   @override
   Widget build(BuildContext context) {

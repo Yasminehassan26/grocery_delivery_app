@@ -5,10 +5,10 @@ class ElevatedButtonWidget extends StatelessWidget {
   // final String email;
   final String title;
   final Function func;
-  ElevatedButtonWidget(this.title, this.func);
+  const ElevatedButtonWidget(this.title, this.func, {Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 50,
       width: double.infinity,
       child: ElevatedButton(

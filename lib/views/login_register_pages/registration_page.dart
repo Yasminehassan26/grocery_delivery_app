@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grocery_delivery_app/views/login_register_pages/widgets/register_widget.dart';
 
 class RegistrationPage extends StatelessWidget {
-  RegistrationPage({Key? key}) : super(key: key);
+  const RegistrationPage({Key? key}) : super(key: key);
   static const routeName = '/register';
 
   @override
