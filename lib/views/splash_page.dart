@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:grocery_delivery_app/gen/assets.gen.dart';
 
 import 'login_register_pages/Wrapper_page.dart';
 
@@ -38,32 +39,10 @@ class _SplashPageState extends State<SplashPage> {
                   height: 150,
                   //BoxDecoration Widget
                   decoration: BoxDecoration(
-                    image: const DecorationImage(
-                      image: AssetImage('assets/logo.png'),
+                    image: DecorationImage(
+                      image: AssetImage(Assets.logoo.path),
                       fit: BoxFit.cover,
                     ), //DecorationImage
-                    border: Border.all(
-                      color: const Color.fromARGB(255, 255, 255, 255),
-                      width: 8,
-                    ), //Border.all
-                    borderRadius: BorderRadius.circular(20),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Color.fromARGB(255, 232, 232, 232),
-                        offset: Offset(
-                          5.0,
-                          5.0,
-                        ), //Offset
-                        blurRadius: 10.0,
-                        spreadRadius: 2.0,
-                      ), //BoxShadow
-                      BoxShadow(
-                        color: Color.fromARGB(255, 212, 212, 212),
-                        offset: Offset(0.0, 0.0),
-                        blurRadius: 0.0,
-                        spreadRadius: 0.0,
-                      ), //BoxShadow
-                    ],
                   ), //BoxDecoration
                 ), //Container
                 const SizedBox(
