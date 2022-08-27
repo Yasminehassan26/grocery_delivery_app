@@ -26,10 +26,13 @@ class ProductAppBar extends StatelessWidget with PreferredSizeWidget {
         },
         icon: const Icon(Icons.arrow_back_ios_rounded),
       ),
-      title: TextWidget(
-        title: loadedProduct.name,
-        weight: FontWeight.bold,
-        font: 20,
+      title: FittedBox(
+        fit: BoxFit.scaleDown,
+        child: TextWidget(
+          title: loadedProduct.name,
+          weight: FontWeight.bold,
+          font: 20,
+        ),
       ),
       actions: [
         IconButton(

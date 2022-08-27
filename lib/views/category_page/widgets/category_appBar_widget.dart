@@ -14,7 +14,7 @@ class CategoryAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-              centerTitle: true,
+      centerTitle: true,
       backgroundColor: Colors.white,
       foregroundColor: Colors.black,
       elevation: 0,
@@ -24,9 +24,16 @@ class CategoryAppBar extends StatelessWidget with PreferredSizeWidget {
         },
         icon: const Icon(Icons.arrow_back_ios_rounded),
       ),
-      title:TextWidget(title: loadedCategory.name,weight: FontWeight.bold,font: 20,),
+      title: FittedBox(
+          fit: BoxFit.scaleDown,
+          child: TextWidget(
+            title: loadedCategory.name,
+            weight: FontWeight.bold,
+            font: 20,
+          )),
     );
   }
-   @override
+
+  @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }

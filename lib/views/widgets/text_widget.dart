@@ -7,12 +7,14 @@ class TextWidget extends StatelessWidget {
   final Color color;
   final FontWeight weight;
   final TextAlign textAlign;
-   const TextWidget(
-      {Key? key, required this.title,
+  const TextWidget(
+      {Key? key,
+      required this.title,
       this.font = 14,
       this.color = Colors.black,
       this.weight = FontWeight.normal,
-      this.textAlign = TextAlign.left}) : super(key: key);
+      this.textAlign = TextAlign.left})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +25,7 @@ class TextWidget extends StatelessWidget {
         fontSize: font,
         fontWeight: weight,
         color: color,
+        overflow: TextOverflow.ellipsis,
       ),
     );
   }

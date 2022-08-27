@@ -35,14 +35,11 @@ class CategoryItem extends StatelessWidget {
                 width: constraints.maxWidth - 10,
                 height: constraints.maxHeight / 3,
                 child: Center(
-                  child: FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: TextWidget(
-                      title: category.name,
-                      weight: FontWeight.bold,
-                      textAlign: TextAlign.center,
-                      font: 15,
-                    ),
+                  child: TextWidget(
+                    title: category.name,
+                    weight: FontWeight.bold,
+                    textAlign: TextAlign.center,
+                    font: 15,
                   ),
                 ),
               ),
