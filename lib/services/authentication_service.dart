@@ -2,7 +2,7 @@
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:grocery_delivery_app/models/user_model.dart';
-import 'package:grocery_delivery_app/services/utils.dart';
+import 'package:grocery_delivery_app/services/utils_service.dart';
 
 class AuthenticationService {
   final auth.FirebaseAuth _firebaseAuth = auth.FirebaseAuth.instance;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../view_models/cart_view_model.dart';
 import 'package:provider/provider.dart';
-import '../../../models/user_cart.dart';
+import '../../../models/cart_model.dart';
 import '../../widgets/text_widget.dart';
 
 class TrailingCartWidget extends StatelessWidget {

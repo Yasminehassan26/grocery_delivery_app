@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_delivery_app/view_models/categories_view_model.dart';
-import '../../../services/categories.dart';
+import '../../../services/categories_service.dart';
 import 'carousel_widget.dart';
 import 'category_item.dart';
 import 'package:provider/provider.dart';

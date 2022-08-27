@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import '../models/user_cart.dart';
+import '../models/cart_model.dart';
 import 'authentication_service.dart';
 
 class CartService {
