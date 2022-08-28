@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_delivery_app/services/utils_service.dart';
 import 'package:provider/provider.dart';
 
 import '../../../view_models/authentication_view_model.dart';
@@ -13,14 +14,22 @@ class RegisterWidget extends StatelessWidget {
   final TextEditingController passController = TextEditingController();
   final TextEditingController passVController = TextEditingController();
 
-   RegisterWidget({Key? key}) : super(key: key);
+  RegisterWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final authService = Provider.of<AuthenticationViewModel>(context);
-    void _register(){
-      authService.signUp(emailController.text, passController.text);
-      Navigator.pop(context);
+    void _register() async {
+      if (emailController.text == "") {
+        Utils.showSnackBar("Please enter a valid email");
+      } else if (passController.text == "" || passVController.text == "") {
+        Utils.showSnackBar("Please enter a valid password");
+      } else if (passController.value != passVController.value) {
+        Utils.showSnackBar("the two passwords don't match");
+      } else if (await authService.signUp(
+          emailController.text, passController.text)) {
+        Navigator.pop(context);
+      }
     }
 
     return Column(
@@ -36,13 +45,14 @@ class RegisterWidget extends StatelessWidget {
         const SizedBox(height: 30),
         Column(
           children: [
-            const TextWidget(title: 'By creating an account you are agreeing to our'),
+            const TextWidget(
+                title: 'By creating an account you are agreeing to our'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
-                 ButtonWidget('Terms of services'),
-                 TextWidget(title: 'and'),
-                 ButtonWidget('Privacy Policy'),
+                ButtonWidget('Terms of services'),
+                TextWidget(title: 'and'),
+                ButtonWidget('Privacy Policy'),
               ],
             ),
           ],

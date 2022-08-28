@@ -15,19 +15,21 @@ class AuthenticationViewModel with ChangeNotifier {
 
   bool get currentUser => _currentUser;
 
-  Future<void> signIn(String email, String password) async {
+  Future<bool> signIn(String email, String password) async {
     await authService.signIn(email, password).then((value) {
       currentUser = value;
     });
 
     notifyListeners();
+    return currentUser;
   }
 
-  Future<void> signUp(String email, String password) async {
+  Future<bool> signUp(String email, String password) async {
     await authService.signUp(email, password).then((value) {
       currentUser = value;
     });
     notifyListeners();
+    return currentUser;
   }
 
   Future<void> signOut() async {

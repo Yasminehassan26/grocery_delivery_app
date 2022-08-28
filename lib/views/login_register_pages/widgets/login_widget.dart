@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../../services/utils_service.dart';
 import '../../../view_models/authentication_view_model.dart';
 import '../../widgets/elevated_button_widget.dart';
 import '../../widgets/text_button_widget.dart';
@@ -19,11 +20,14 @@ class LoginBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final authService = Provider.of<AuthenticationViewModel>(context);
 
-
-
     void _login() {
-      authService.signIn(emailController.text, passController.text);
-
+      if (emailController.text == "") {
+        Utils.showSnackBar("Please enter a valid email");
+      } else if (passController.text == "") {
+        Utils.showSnackBar("Please enter a valid password");
+      } else {
+        authService.signIn(emailController.text, passController.text);
+      }
       // await addProducts();
     }
 
