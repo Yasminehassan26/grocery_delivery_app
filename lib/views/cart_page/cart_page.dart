@@ -9,7 +9,7 @@ import 'widgets/checkout_order.dart';
 import 'widgets/empty_cart.dart';
 
 class CartPage extends StatelessWidget {
-  CartPage({Key? key}) : super(key: key);
+  const CartPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,16 +21,16 @@ class CartPage extends StatelessWidget {
 
     void checkoutCart() {
       cart.checkoutCart();
-      Navigator.of(context).pushReplacementNamed(checkoutOrderPage.routeName);
+      Navigator.of(context).pushReplacementNamed(CheckoutOrderPage.routeName);
     }
 
-     return Scaffold(
+    return Scaffold(
       appBar: CartAppBar(deleteCart),
       body: (cart.items.isEmpty)
           ? const EmptyCart()
           : Column(children: [
               const Expanded(child: CartGrid()),
-              checkoutButton(checkoutCart)
+              CheckoutButton(checkoutCart)
             ]),
     );
   }

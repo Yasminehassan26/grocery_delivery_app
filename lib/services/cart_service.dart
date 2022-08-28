@@ -46,7 +46,7 @@ class CartService {
     var doc = await collection.doc(AuthenticationService.getUser()).get();
     late List<UserCart> items;
     if (doc.exists) {
-      items = await List<UserCart>.from(
+      items = List<UserCart>.from(
           doc.get('items').map((x) => UserCart.fromJson(x)));
     } else {
       items = [];

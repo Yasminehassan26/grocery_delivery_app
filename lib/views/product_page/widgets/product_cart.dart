@@ -49,8 +49,8 @@ class ProfileCartButton extends StatelessWidget {
                   iconSize: 25,
                   onPressed: decrement,
                   icon: (cartProduct.quantity == 1)
-                      ? Icon(Icons.delete_outline)
-                      : Icon(Icons.remove)),
+                      ? const Icon(Icons.delete_outline)
+                      : const Icon(Icons.remove)),
             ),
           ),
           Container(
@@ -85,7 +85,7 @@ class ProfileCartButton extends StatelessWidget {
                 color: Theme.of(context).primaryColor,
                 iconSize: 25,
                 onPressed: increment,
-                icon: Icon(Icons.add),
+                icon: const Icon(Icons.add),
               ),
             ),
           )

@@ -1,12 +1,14 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../view_models/cart_view_model.dart';
 import '../../widgets/text_widget.dart';
 
-class checkoutButton extends StatelessWidget {
-  Function func;
-  checkoutButton(this.func, {Key? key}) : super(key: key);
+class CheckoutButton extends StatelessWidget {
+  final Function func;
+   const CheckoutButton(
+    this.func, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +46,7 @@ class checkoutButton extends StatelessWidget {
               ),
             ),
             Expanded(
-              child: Container(
+              child: SizedBox(
                 height: 60,
                 width: double.infinity,
                 child: ElevatedButton(
@@ -60,7 +62,7 @@ class checkoutButton extends StatelessWidget {
                           bottomRight: Radius.circular(10.0)),
                     ),
                   ),
-                  child: TextWidget(
+                  child: const TextWidget(
                       title: "Checkout",
                       font: 22,
                       color: Colors.white,

@@ -11,7 +11,7 @@ import 'view_models/favorites_view_model.dart';
 import 'view_models/products_view_model.dart';
 import 'views/cart_page/widgets/checkout_order.dart';
 import 'views/category_page/categoryPage.dart';
-import 'views/login_register_pages/Wrapper_page.dart';
+import 'views/login_register_pages/wrapper_page.dart';
 import 'views/login_register_pages/login_page.dart';
 import 'views/login_register_pages/registration_page.dart';
 import 'views/product_page/product_page.dart';
@@ -61,10 +61,10 @@ class MyApp extends StatelessWidget {
             routes: {
               LoginPage.routeName: (ctx) => const LoginPage(),
               RegistrationPage.routeName: (ctx) => const RegistrationPage(),
-              CategoryPage.routeName: (ctx) => CategoryPage(),
+              CategoryPage.routeName: (ctx) => const CategoryPage(),
               ProductPage.routeName: (ctx) => const ProductPage(),
               Wrapper.routeName: (ctx) => const Wrapper(),
-              checkoutOrderPage.routeName: (ctx) => checkoutOrderPage(),
+              CheckoutOrderPage.routeName: (ctx) => const CheckoutOrderPage(),
             }));
   }
 }

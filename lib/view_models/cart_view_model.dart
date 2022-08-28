@@ -27,17 +27,17 @@ class CartViewModel with ChangeNotifier {
   }
 
   void incrementProduct(int id) {
-    _items.forEach((element) {
+    for (var element in _items) {
       if (element.product.id == id) {
         element.quantity++;
       }
-    });
+    }
     updateCart();
   }
 
   void decrementProduct(int id) {
     try {
-      _items.forEach((element) {
+      for (var element in _items) {
         if (element.product.id == id) {
           element.quantity--;
           if (element.quantity == 0) {
@@ -45,7 +45,7 @@ class CartViewModel with ChangeNotifier {
             throw "";
           }
         }
-      });
+      }
     } catch (e) {
       // leave it
     }
@@ -90,9 +90,9 @@ class CartViewModel with ChangeNotifier {
 
   double getTotalPrice() {
     double totalPrice = 0.0;
-    _items.forEach((item) {
+    for (var item in _items) {
       totalPrice += item.quantity * item.product.price;
-    });
+    }
     return totalPrice;
   }
 }

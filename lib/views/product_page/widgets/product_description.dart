@@ -16,7 +16,7 @@ class DescriptionWidget extends StatelessWidget {
     return Column(crossAxisAlignment: CrossAxisAlignment.start,
         // mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          TextWidget(
+          const TextWidget(
             title: "Product Details",
             weight: FontWeight.bold,
             font: 18,

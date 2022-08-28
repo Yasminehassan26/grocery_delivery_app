@@ -26,7 +26,7 @@ class RegisterWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        TextWidget(title: 'Register', font: 35, weight: FontWeight.bold),
+        const TextWidget(title: 'Register', font: 35, weight: FontWeight.bold),
         const SizedBox(height: 15),
         InputWidget(emailController, 'Email', 'Email can not be empty'),
         PasswordInput(passController, 'Enter a valid password'),
@@ -36,13 +36,13 @@ class RegisterWidget extends StatelessWidget {
         const SizedBox(height: 30),
         Column(
           children: [
-            TextWidget(title: 'By creating an account you are agreeing to our'),
+            const TextWidget(title: 'By creating an account you are agreeing to our'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ButtonWidget('Terms of services'),
-                TextWidget(title: 'and'),
-                ButtonWidget('Privacy Policy'),
+              children: const [
+                 ButtonWidget('Terms of services'),
+                 TextWidget(title: 'and'),
+                 ButtonWidget('Privacy Policy'),
               ],
             ),
           ],

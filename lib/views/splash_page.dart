@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import '../gen/assets.gen.dart';
 
-import 'login_register_pages/Wrapper_page.dart';
+import 'login_register_pages/wrapper_page.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);

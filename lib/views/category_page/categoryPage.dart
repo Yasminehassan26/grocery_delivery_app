@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../view_models/categories_view_model.dart';
-import '../../services/categories_service.dart';
 import 'widgets/category_appBar_widget.dart';
 import 'widgets/products_grid.dart';
 import 'package:provider/provider.dart';
@@ -8,7 +7,7 @@ import 'package:provider/provider.dart';
 class CategoryPage extends StatelessWidget {
   static const routeName = '/category';
 
-  CategoryPage({Key? key}) : super(key: key);
+  const CategoryPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +20,7 @@ class CategoryPage extends StatelessWidget {
 
     return Scaffold(
       appBar: CategoryAppBar(loadedCategory: loadedCategory),
-      body: Column(children: [ProductsGrid()]),
+      body: Column(children: const [ProductsGrid()]),
     );
   }
 }

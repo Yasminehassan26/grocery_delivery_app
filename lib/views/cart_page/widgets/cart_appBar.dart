@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import '../../login_register_pages/Wrapper_page.dart';
+import '../../login_register_pages/wrapper_page.dart';
 import '../../widgets/text_widget.dart';
 
 class CartAppBar extends StatelessWidget with PreferredSizeWidget {
-  Function function;
+  final Function function;
   CartAppBar(this.function, {Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class CartAppBar extends StatelessWidget with PreferredSizeWidget {
         },
         icon: const Icon(Icons.close),
       ),
-      title: TextWidget(
+      title: const TextWidget(
         title: "Cart",
         weight: FontWeight.bold,
         font: 20,

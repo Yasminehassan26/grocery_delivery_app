@@ -12,12 +12,12 @@ class ProductsGrid extends StatelessWidget {
     final products = Provider.of<ProductsViewModel>(context).items;
     return Expanded(
       child: GridView.builder(
-        padding: EdgeInsets.only(top: 30, left: 20, bottom: 20, right: 10),
+        padding: const EdgeInsets.only(top: 30, left: 20, bottom: 20, right: 10),
         shrinkWrap: true,
         itemCount: products.length,
         itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
           value: products[i],
-          child: ProductItem(),
+          child: const ProductItem(),
         ),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,

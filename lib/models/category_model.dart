@@ -4,10 +4,10 @@ import 'package:flutter/cupertino.dart';
 
 import '../models/product_model.dart';
 
-List<Category> DataFromJson(String str) =>
+List<Category> dataFromJson(String str) =>
     List<Category>.from(json.decode(str).map((x) => Category.fromJson(x)));
 
-String DataToJson(List<Category> data) =>
+String dataToJson(List<Category> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class Category with ChangeNotifier {

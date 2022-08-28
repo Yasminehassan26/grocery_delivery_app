@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../gen/assets.gen.dart';
-import '../../login_register_pages/Wrapper_page.dart';
+import '../../login_register_pages/wrapper_page.dart';
 import '../../widgets/elevated_button_widget.dart';
 import '../../widgets/text_widget.dart';
 
-class checkoutOrderPage extends StatelessWidget {
+class CheckoutOrderPage extends StatelessWidget {
   static const routeName = '/checkout';
 
-  checkoutOrderPage({Key? key}) : super(key: key);
+  const CheckoutOrderPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

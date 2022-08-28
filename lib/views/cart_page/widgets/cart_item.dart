@@ -6,6 +6,8 @@ import 'package:provider/provider.dart';
 import 'cart_buttons.dart';
 
 class CartItem extends StatelessWidget {
+  const CartItem({Key? key}) : super(key: key);
+
   double calculate(UserCart product) {
     return double.parse(
         (product.quantity * product.product.price).toStringAsFixed(2));

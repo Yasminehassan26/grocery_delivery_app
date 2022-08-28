@@ -26,9 +26,9 @@ class Wrapper extends StatelessWidget {
           cart.initializeCart();
           cart.initialized = true;
         }
-        return MainPage();
+        return const MainPage();
       } else {
-        return LoginPage();
+        return const LoginPage();
       }
     });
   }

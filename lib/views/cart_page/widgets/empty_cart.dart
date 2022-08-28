@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../gen/assets.gen.dart';
-import '../../login_register_pages/Wrapper_page.dart';
+import '../../login_register_pages/wrapper_page.dart';
 import '../../widgets/elevated_button_widget.dart';
 import '../../widgets/text_widget.dart';
 

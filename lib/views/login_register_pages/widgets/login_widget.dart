@@ -36,7 +36,7 @@ class LoginBody extends StatelessWidget {
             children: [
               InputWidget(emailController, 'Email', 'Email cannot be empty'),
               PasswordInput(passController, 'Password cannot be empty'),
-              ButtonWidget('Forgot Password?'),
+              const ButtonWidget('Forgot Password?'),
             ]),
       ),
       ElevatedButtonWidget('Login', _login),
@@ -44,7 +44,7 @@ class LoginBody extends StatelessWidget {
       Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          TextWidget(title: 'Don\'t have any account?'),
+          const TextWidget(title: 'Don\'t have any account?'),
           TextButton(
             child: TextWidget(
               title: 'Create one',

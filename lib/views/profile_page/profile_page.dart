@@ -9,7 +9,7 @@ import 'widgets/listTile_widget.dart';
 import 'widgets/toggle_button.dart';
 
 class ProfilePage extends StatelessWidget {
-  ProfilePage({Key? key}) : super(key: key);
+  const ProfilePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

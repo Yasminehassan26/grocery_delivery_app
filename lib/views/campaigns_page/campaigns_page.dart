@@ -4,7 +4,7 @@ import '../home_page/widgets/carousel_widget.dart';
 import '../widgets/text_widget.dart';
 
 class CampaignsPage extends StatelessWidget {
-  CampaignsPage({Key? key}) : super(key: key);
+  const CampaignsPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -15,11 +15,11 @@ class SearchPage extends StatelessWidget {
           children: [
             Image.asset('assets/login.jpg',
                 width: double.infinity, height: 350, fit: BoxFit.cover),
-            Positioned(
+            const Positioned(
               bottom: 15,
               left: 15,
               child:
-                  TextWidget(title: 'Search', font: 38, weight: FontWeight.bold),
+                   TextWidget(title: 'Search', font: 38, weight: FontWeight.bold),
             )
           ],
         ),

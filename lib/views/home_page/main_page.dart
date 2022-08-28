@@ -16,11 +16,11 @@ class _MainPageState extends State<MainPage> {
   int index = 0;
 
   final screens = [
-    HomePageState(),
-    SearchPage(),
-    CartPage(),
-    CampaignsPage(),
-    ProfilePage(),
+    const HomePageState(),
+    const SearchPage(),
+    const CartPage(),
+    const CampaignsPage(),
+    const ProfilePage(),
   ];
   void _selectScreen(int selectedIndex) {
     setState(() {
@@ -55,7 +55,7 @@ class _MainPageState extends State<MainPage> {
         ),
       );
     } else {
-      return CartPage();
+      return const CartPage();
     }
   }
 }

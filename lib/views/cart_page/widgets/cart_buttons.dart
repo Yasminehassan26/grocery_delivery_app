@@ -47,8 +47,8 @@ class TrailingCartWidget extends StatelessWidget {
                 iconSize: 25,
                 onPressed: decrement,
                 icon: (product.quantity == 1)
-                    ? Icon(Icons.delete_outline)
-                    : Icon(Icons.remove)),
+                    ? const Icon(Icons.delete_outline)
+                    : const Icon(Icons.remove)),
           ),
         ),
         Container(
@@ -83,7 +83,7 @@ class TrailingCartWidget extends StatelessWidget {
               color: Theme.of(context).primaryColor,
               iconSize: 25,
               onPressed: increment,
-              icon: Icon(Icons.add),
+              icon: const Icon(Icons.add),
             ),
           ),
         )
