@@ -31,6 +31,7 @@ class ProfileCartButton extends StatelessWidget {
       child: Row(
         children: [
           InkWell(
+            onTap: decrement,
             child: Container(
               alignment: Alignment.center,
               width: 60,

@@ -26,7 +26,7 @@ class HomePageState extends StatelessWidget {
                 } else if (snapshot.hasData) {
                   categoriesData.items = snapshot.data!;
 
-                  return CategoriesGrid();
+                  return const CategoriesGrid();
                 } else {
                   return const Center(
                     child: CircularProgressIndicator(),

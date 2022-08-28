@@ -8,20 +8,18 @@ class PasswordInput extends StatefulWidget {
 
   @override
   State<PasswordInput> createState() =>
-      _PasswordInputState(textController,message);
+      _PasswordInputState();
 }
 
 class _PasswordInputState extends State<PasswordInput> {
   bool _isObscure = true;
-  final TextEditingController textController;
-  final String message;
+  
 
-  _PasswordInputState(this.textController, this.message);
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: textController,
+      controller: widget.textController,
       autocorrect: false,
       textCapitalization: TextCapitalization.none,
       enableSuggestions: false,

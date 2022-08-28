@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import '../../../models/cart_model.dart';
 import '../../widgets/text_widget.dart';
-import 'package:provider/provider.dart';
 
 import 'cart_buttons.dart';
 
 class CartItem extends StatelessWidget {
-  const CartItem({Key? key}) : super(key: key);
-
+  final UserCart product;
+  const CartItem(this.product, {Key? key}) : super(key: key);
+  
   double calculate(UserCart product) {
     return double.parse(
         (product.quantity * product.product.price).toStringAsFixed(2));
@@ -15,7 +15,7 @@ class CartItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final product = Provider.of<UserCart>(context);
+    // final product = Provider.of<UserCart>(context);
     final width = MediaQuery.of(context).size.width;
 
     return Container(

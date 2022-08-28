@@ -22,7 +22,8 @@ class CartPage extends StatelessWidget {
 
     void checkoutCart() {
       cart.checkoutCart();
-      Navigator.of(context).pushReplacementNamed(CheckoutOrderPage.routeName);
+      Navigator.of(context).pushNamedAndRemoveUntil(
+          CheckoutOrderPage.routeName, (Route<dynamic> route) => false);
     }
 
     return Scaffold(

@@ -1,14 +1,19 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import '../../../models/product_model.dart';
-import '../../../view_models/cart_view_model.dart';
-import 'cart_button.dart';
-import 'icon_button.dart';
-import '../../product_page/product_page.dart';
-import '../../widgets/text_widget.dart';
 import 'package:provider/provider.dart';
 
+import '../../../models/product_model.dart';
+import '../../../view_models/cart_view_model.dart';
+import '../../product_page/product_page.dart';
+import '../../widgets/text_widget.dart';
+import 'cart_button.dart';
+import 'icon_button.dart';
+
 class ProductItem extends StatefulWidget {
-  const ProductItem({Key? key}) : super(key: key);
+   const ProductItem(
+    this.product, {Key? key}
+  ) : super(key: key) ;
+  final Product product;
 
   @override
   ProductItemState createState() => ProductItemState();
@@ -17,7 +22,7 @@ class ProductItem extends StatefulWidget {
 class ProductItemState extends State<ProductItem> {
   @override
   Widget build(BuildContext context) {
-    final product = Provider.of<Product>(context);
+    // final product = Provider.of<Product>(context);
     final cart = Provider.of<CartViewModel>(context);
 
     return GridTile(
@@ -29,7 +34,7 @@ class ProductItemState extends State<ProductItem> {
             onTap: (() {
               Navigator.of(context).pushNamed(
                 ProductPage.routeName,
-                arguments: product.name,
+                arguments: widget.product.name,
               );
             }),
             child: Stack(
@@ -44,15 +49,15 @@ class ProductItemState extends State<ProductItem> {
                       borderRadius: BorderRadius.circular(15.0)),
                   child: Padding(
                     padding: const EdgeInsets.all(40.0),
-                    child: Image.network(product.image),
+                    child: Image.network( widget.product.image),
                   ),
                 ),
                 Positioned(
                   top: -15,
                   right: -15,
-                  child: (cart.containsProduct(product.id))
-                      ? CartButton(product.id)
-                      : IconButtonCart(product),
+                  child: (cart.containsProduct(widget.product.id))
+                      ? CartButton(widget.product.id)
+                      : IconButtonCart(widget.product),
                 )
               ],
             ),
@@ -62,12 +67,12 @@ class ProductItemState extends State<ProductItem> {
           height: 5,
         ),
         TextWidget(
-            title: '  \$${product.price}',
+            title: '  \$${widget.product.price}',
             weight: FontWeight.bold,
             color: Theme.of(context).primaryColor),
-        TextWidget(title: "  ${product.name}", weight: FontWeight.bold),
+        TextWidget(title: "  ${widget.product.name}", weight: FontWeight.bold),
         TextWidget(
-            title: "  ${product.weight}",
+            title: "  ${widget.product.weight}",
             color: Theme.of(context).secondaryHeaderColor),
       ],
     ));

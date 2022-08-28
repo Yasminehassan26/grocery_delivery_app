@@ -17,10 +17,7 @@ class CartGrid extends StatelessWidget {
         height: 1,
         thickness: 1,
       ),
-      itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
-        value: cartItems[i],
-        child: const CartItem(),
-      ),
+      itemBuilder: (ctx, i) => CartItem(cartItems[i]),
     );
   }
 }

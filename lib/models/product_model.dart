@@ -1,8 +1,5 @@
 
-
-import 'package:flutter/cupertino.dart';
-
-class Product with ChangeNotifier {
+class Product  {
   final int id;
   final String name;
   final String weight;

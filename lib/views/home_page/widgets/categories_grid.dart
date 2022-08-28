@@ -21,10 +21,7 @@ class CategoriesGrid extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               shrinkWrap: true,
               itemCount: categories.length,
-              itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
-                value: categories[i],
-                child: const Card(elevation: 5, child: CategoryItem()),
-              ),
+              itemBuilder: (ctx, i) => Card(elevation: 5, child: CategoryItem(categories[i])),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3,
                 childAspectRatio: 0.75,

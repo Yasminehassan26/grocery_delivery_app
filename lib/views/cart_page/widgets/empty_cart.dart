@@ -51,8 +51,9 @@ class EmptyCart extends StatelessWidget {
             ElevatedButtonWidget(
                 'Start Shopping',
                 () => {
-                      Navigator.of(context)
-                          .pushReplacementNamed(Wrapper.routeName)
+                      // Navigator.of(context)
+                      //     .pushReplacementNamed(Wrapper.routeName)
+                      Navigator.of(context).pop(),
                     }),
           ],
         ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../models/category_model.dart';
 import '../../../view_models/products_view_model.dart';
 import '../../widgets/text_widget.dart';
 import 'package:provider/provider.dart';
@@ -7,14 +6,14 @@ import 'package:provider/provider.dart';
 import '../../category_page/categoryPage.dart';
 
 class CategoryItem extends StatelessWidget {
-  const CategoryItem({Key? key}) : super(key: key);
+  const CategoryItem(this.category, {Key? key}) : super(key: key);
 
   // CategoryItem(this.category);
-  // final category;
+ final category;
 
   @override
   Widget build(BuildContext context) {
-    final category = Provider.of<Category>(context);
+    // final category = Provider.of<Category>(context);
     final products = Provider.of<ProductsViewModel>(context);
 
     return GestureDetector(

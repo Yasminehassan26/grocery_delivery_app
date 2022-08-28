@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:flutter/cupertino.dart';
 
 import '../models/product_model.dart';
 
@@ -10,7 +9,7 @@ List<Category> dataFromJson(String str) =>
 String dataToJson(List<Category> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
-class Category with ChangeNotifier {
+class Category  {
   final String name;
   final String image;
   final List<Product> items;

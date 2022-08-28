@@ -13,21 +13,18 @@ class ToggleButton extends StatefulWidget {
   const ToggleButton(this.path, this.title, {Key? key}) : super(key: key);
 
   @override
-  State<ToggleButton> createState() => _ToggleButtonState(path, title);
+  State<ToggleButton> createState() => _ToggleButtonState();
 }
 
 class _ToggleButtonState extends State<ToggleButton> {
   bool state = true;
-  final String title;
-
-  final String path;
-  _ToggleButtonState(this.path, this.title);
+ 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: SvgPicture.asset(path),
+      leading: SvgPicture.asset(widget.path),
       title: TextWidget(
-        title: title,
+        title: widget.title,
         color: Colors.grey,
         font: 18,
       ),
