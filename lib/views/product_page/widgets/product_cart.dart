@@ -30,27 +30,31 @@ class ProfileCartButton extends StatelessWidget {
       padding: const EdgeInsets.all(20),
       child: Row(
         children: [
-          Container(
-            alignment: Alignment.center,
-            width: 60,
-            height: 40,
-            decoration: BoxDecoration(
-              color: const Color(0xFFFCFCFC),
-              border: Border.all(
-                color: const Color(0xFFE0E0E0),
+          InkWell(
+            child: Container(
+              alignment: Alignment.center,
+              width: 60,
+              height: 40,
+              decoration: BoxDecoration(
+                color: const Color(0xFFFCFCFC),
+                border: Border.all(
+                  color: const Color(0xFFE0E0E0),
+                ),
+                borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(10.0),
+                    bottomLeft: Radius.circular(10.0)),
               ),
-              borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(10.0),
-                  bottomLeft: Radius.circular(10.0)),
-            ),
-            child: Center(
-              child: IconButton(
-                  color: Theme.of(context).primaryColor,
-                  iconSize: 25,
-                  onPressed: decrement,
-                  icon: (cartProduct.quantity == 1)
-                      ? const Icon(Icons.delete_outline)
-                      : const Icon(Icons.remove)),
+              child: (cartProduct.quantity == 1)
+                  ? Icon(
+                      Icons.delete_outline,
+                      color: Theme.of(context).primaryColor,
+                      size: 25,
+                    )
+                  : Icon(
+                      Icons.remove,
+                      color: Theme.of(context).primaryColor,
+                      size: 25,
+                    ),
             ),
           ),
           Container(
@@ -68,24 +72,24 @@ class ProfileCartButton extends StatelessWidget {
               ),
             ),
           ),
-          Container(
-            width: 60,
-            height: 40,
-            decoration: BoxDecoration(
-              color: const Color(0xFFFCFCFC),
-              border: Border.all(
-                color: const Color(0xFFE0E0E0),
+          InkWell(
+            onTap: increment,
+            child: Container(
+              width: 60,
+              height: 40,
+              decoration: BoxDecoration(
+                color: const Color(0xFFFCFCFC),
+                border: Border.all(
+                  color: const Color(0xFFE0E0E0),
+                ),
+                borderRadius: const BorderRadius.only(
+                    topRight: Radius.circular(10.0),
+                    bottomRight: Radius.circular(10.0)),
               ),
-              borderRadius: const BorderRadius.only(
-                  topRight: Radius.circular(10.0),
-                  bottomRight: Radius.circular(10.0)),
-            ),
-            child: Center(
-              child: IconButton(
+              child: Icon(
+                Icons.add,
                 color: Theme.of(context).primaryColor,
-                iconSize: 25,
-                onPressed: increment,
-                icon: const Icon(Icons.add),
+                size: 25,
               ),
             ),
           )

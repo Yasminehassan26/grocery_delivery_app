@@ -3,7 +3,6 @@ import '../../../models/cart_model.dart';
 import '../../../view_models/cart_view_model.dart';
 import 'package:provider/provider.dart';
 
-
 import '../../widgets/text_widget.dart';
 
 class CartButton extends StatelessWidget {
@@ -25,24 +24,27 @@ class CartButton extends StatelessWidget {
     UserCart p = cart.findById(id);
     return Column(
       children: [
-        Container(
-          alignment: Alignment.center,
-          width: 40,
-          height: 40,
-          decoration: BoxDecoration(
-            color: const Color(0xFFFCFCFC),
-            border: Border.all(
-              color: const Color(0xFFE0E0E0),
+        InkWell(
+          onTap: decrement,
+          child: Container(
+            alignment: Alignment.center,
+            width: 40,
+            height: 40,
+            decoration: BoxDecoration(
+              color: const Color(0xFFFCFCFC),
+              border: Border.all(
+                color: const Color(0xFFE0E0E0),
+              ),
+              borderRadius: const BorderRadius.only(
+                  topRight: Radius.circular(10.0),
+                  topLeft: Radius.circular(10.0)),
             ),
-            borderRadius: const BorderRadius.only(
-                topRight: Radius.circular(10.0),
-                topLeft: Radius.circular(10.0)),
-          ),
-          child: IconButton(
+            child: Icon(
+              Icons.remove,
               color: Theme.of(context).primaryColor,
-              iconSize: 25,
-              onPressed: decrement,
-              icon: const Icon(Icons.remove)),
+              size: 25,
+            ),
+          ),
         ),
         Container(
           width: 38,
@@ -59,23 +61,26 @@ class CartButton extends StatelessWidget {
             ),
           ),
         ),
-        Container(
-          width: 40,
-          height: 40,
-          decoration: BoxDecoration(
-            color: const Color(0xFFFCFCFC),
-            border: Border.all(
-              color: const Color(0xFFE0E0E0),
+        InkWell(
+          onTap: increment,
+          child: Container(
+            width: 40,
+            height: 40,
+            decoration: BoxDecoration(
+              color: const Color(0xFFFCFCFC),
+              border: Border.all(
+                color: const Color(0xFFE0E0E0),
+              ),
+              borderRadius: const BorderRadius.only(
+                  bottomRight: Radius.circular(10.0),
+                  bottomLeft: Radius.circular(10.0)),
             ),
-            borderRadius: const BorderRadius.only(
-                bottomRight: Radius.circular(10.0),
-                bottomLeft: Radius.circular(10.0)),
-          ),
-          child: IconButton(
-            color: Theme.of(context).primaryColor,
-            iconSize: 25,
-            onPressed: increment,
-            icon: const Icon(Icons.add),
+            child: Icon(
+              Icons.add,
+              color: Theme.of(context).primaryColor,
+              size: 25,
+            ),
+          
           ),
         )
       ],

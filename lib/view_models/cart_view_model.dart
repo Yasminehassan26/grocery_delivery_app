@@ -53,7 +53,7 @@ class CartViewModel with ChangeNotifier {
   }
 
   Future<void> updateCart() async {
-    await cartService.updateCart(items);
+    cartService.updateCart(items);
     notifyListeners();
   }
 
@@ -68,18 +68,18 @@ class CartViewModel with ChangeNotifier {
 
   Future<void> addToCart(Product p) async {
     _items.add(UserCart(quantity: 1, product: p));
-    await cartService.addToCart(items);
+    cartService.addToCart(items);
     notifyListeners();
   }
 
   Future<void> deleteCart() async {
     _items.clear();
-    await cartService.deleteCart();
+    cartService.deleteCart();
     notifyListeners();
   }
 
   Future<void> initializeCart() async {
-    await cartService.initializeCart().then((value) {
+    cartService.initializeCart().then((value) {
       items = value;
     });
   }
