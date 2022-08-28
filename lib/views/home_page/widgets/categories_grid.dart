@@ -11,27 +11,30 @@ class CategoriesGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     final categoriesData = Provider.of<CategoriesViewModel>(context);
     final categories = categoriesData.items;
-    return Column(
-      children: [
-        const CarouselWidget(),
-        Expanded(
-          child: GridView.builder(
-            padding: const EdgeInsets.all(10),
-            shrinkWrap: true,
-            itemCount: categories.length,
-            itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
-              value: categories[i],
-              child: const Card(elevation: 5, child: CategoryItem()),
+    return Expanded(
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            const CarouselWidget(),
+            GridView.builder(
+              physics: const ScrollPhysics(),
+              padding: const EdgeInsets.all(10),
+              shrinkWrap: true,
+              itemCount: categories.length,
+              itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
+                value: categories[i],
+                child: const Card(elevation: 5, child: CategoryItem()),
+              ),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3,
+                childAspectRatio: 0.75,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+              ),
             ),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 3,
-              childAspectRatio: 0.75,
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
-            ),
-          ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }
