@@ -1,20 +1,20 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:grocery_delivery_app/view_models/categories_view_model.dart';
-import 'services/categories_service.dart';
-import 'view_models/authentication_view_model.dart';
-import 'view_models/products_view_model.dart';
+import 'package:provider/provider.dart';
+
 import 'services/utils_service.dart';
+import 'view_models/authentication_view_model.dart';
 import 'view_models/cart_view_model.dart';
+import 'view_models/categories_view_model.dart';
 import 'view_models/favorites_view_model.dart';
+import 'view_models/products_view_model.dart';
 import 'views/cart_page/widgets/checkout_order.dart';
 import 'views/category_page/categoryPage.dart';
 import 'views/login_register_pages/Wrapper_page.dart';
-import 'views/product_page/product_page.dart';
-import 'package:provider/provider.dart';
 import 'views/login_register_pages/login_page.dart';
 import 'views/login_register_pages/registration_page.dart';
+import 'views/product_page/product_page.dart';
 import 'views/splash_page.dart';
 
 Future main() async {
@@ -23,11 +23,11 @@ Future main() async {
       statusBarIconBrightness: Brightness.dark));
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

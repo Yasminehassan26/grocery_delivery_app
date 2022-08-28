@@ -42,7 +42,7 @@ class CartItem extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SizedBox(
-                  width: constraints.maxWidth / 4,
+                  width: constraints.maxWidth / 2,
                   child: FittedBox(
                     fit: BoxFit.scaleDown,
                     child: Column(

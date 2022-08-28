@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../models/cart_model.dart';
-import '../services/cart_service.dart';
 
+import '../models/cart_model.dart';
 import '../models/product_model.dart';
+import '../services/cart_service.dart';
 
 class CartViewModel with ChangeNotifier {
   late List<UserCart> _items;

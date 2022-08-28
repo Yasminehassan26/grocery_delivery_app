@@ -20,7 +20,7 @@ class AuthenticationService {
 
   Future<bool> signIn(String email, String password) async {
     try {
-      final checkUser = await _firebaseAuth.signInWithEmailAndPassword(
+      await _firebaseAuth.signInWithEmailAndPassword(
           email: email, password: password);
 
       return true;
@@ -33,7 +33,7 @@ class AuthenticationService {
 
   Future<bool> signUp(String email, String password) async {
     try {
-      final checkUser = await _firebaseAuth.createUserWithEmailAndPassword(
+       await _firebaseAuth.createUserWithEmailAndPassword(
           email: email, password: password);
 
       return true;

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
 import '../../../gen/assets.gen.dart';
 import '../../login_register_pages/Wrapper_page.dart';
-import '../../widgets/text_widget.dart';
 import '../../widgets/elevated_button_widget.dart';
+import '../../widgets/text_widget.dart';
 
 class checkoutOrderPage extends StatelessWidget {
   static const routeName = '/checkout';

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../view_models/cart_view_model.dart';
 import 'package:provider/provider.dart';
+
+import '../../../view_models/cart_view_model.dart';
 import 'cart_item.dart';
 
 class CartGrid extends StatelessWidget {

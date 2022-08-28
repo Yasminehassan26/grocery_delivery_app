@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 import '../../view_models/cart_view_model.dart';
 import 'widgets/cart_appBar.dart';
 import 'widgets/cart_grid.dart';
 import 'widgets/checkout_button.dart';
 import 'widgets/checkout_order.dart';
 import 'widgets/empty_cart.dart';
-import 'package:provider/provider.dart';
 
 class CartPage extends StatelessWidget {
   CartPage({Key? key}) : super(key: key);
@@ -26,9 +27,9 @@ class CartPage extends StatelessWidget {
      return Scaffold(
       appBar: CartAppBar(deleteCart),
       body: (cart.items.isEmpty)
-          ? EmptyCart()
+          ? const EmptyCart()
           : Column(children: [
-              Expanded(child: CartGrid()),
+              const Expanded(child: CartGrid()),
               checkoutButton(checkoutCart)
             ]),
     );

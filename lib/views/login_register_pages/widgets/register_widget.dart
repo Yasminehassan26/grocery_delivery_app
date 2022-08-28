@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 import '../../../view_models/authentication_view_model.dart';
-import 'password_input.dart';
+import '../../widgets/elevated_button_widget.dart';
 import '../../widgets/text_button_widget.dart';
 import '../../widgets/text_widget.dart';
-import 'package:provider/provider.dart';
-import '../../widgets/elevated_button_widget.dart';
 import 'input_widget.dart';
+import 'password_input.dart';
 
 class RegisterWidget extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();

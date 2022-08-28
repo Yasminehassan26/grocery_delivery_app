@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../gen/assets.gen.dart';
-import 'widgets/listTile_widget.dart';
-import 'widgets/toggle_button.dart';
-import '../widgets/text_widget.dart';
 import 'package:provider/provider.dart';
 
+import '../../gen/assets.gen.dart';
 import '../../view_models/authentication_view_model.dart';
+import '../widgets/text_widget.dart';
+import 'widgets/listTile_widget.dart';
+import 'widgets/toggle_button.dart';
 
 class ProfilePage extends StatelessWidget {
   ProfilePage({Key? key}) : super(key: key);

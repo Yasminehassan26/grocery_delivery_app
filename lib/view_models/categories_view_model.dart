@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:grocery_delivery_app/services/categories_service.dart';
+import '../services/categories_service.dart';
 import '../models/category_model.dart';
 
 class CategoriesViewModel with ChangeNotifier {

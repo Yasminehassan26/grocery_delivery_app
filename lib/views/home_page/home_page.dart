@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_delivery_app/view_models/categories_view_model.dart';
+import '../../view_models/categories_view_model.dart';
 import '../../models/category_model.dart';
 import '../../services/categories_service.dart';
 import 'widgets/carousel_widget.dart';
@@ -26,7 +26,7 @@ class HomePageState extends StatelessWidget {
                 } else if (snapshot.hasData) {
                   categoriesData.items = snapshot.data!;
 
-                  return CategoriesGrid();
+                  return Expanded(child: CategoriesGrid());
                 } else {
                   return const Center(
                     child: CircularProgressIndicator(),

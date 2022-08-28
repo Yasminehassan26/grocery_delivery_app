@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_delivery_app/views/home_page/widgets/carousel_widget.dart';
+
+import '../home_page/widgets/carousel_widget.dart';
 import '../widgets/text_widget.dart';
 
 class CampaignsPage extends StatelessWidget {
