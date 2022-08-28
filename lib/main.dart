@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:grocery_delivery_app/views/cart_page/cart_page.dart';
 import 'package:provider/provider.dart';
 
 import 'services/utils_service.dart';
@@ -65,6 +66,8 @@ class MyApp extends StatelessWidget {
               ProductPage.routeName: (ctx) => const ProductPage(),
               Wrapper.routeName: (ctx) => const Wrapper(),
               CheckoutOrderPage.routeName: (ctx) => const CheckoutOrderPage(),
+                            CartPage.routeName: (ctx) => const CartPage(),
+
             }));
   }
 }

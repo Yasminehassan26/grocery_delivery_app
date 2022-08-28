@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../login_register_pages/wrapper_page.dart';
 import '../../widgets/text_widget.dart';
 
 class CartAppBar extends StatelessWidget with PreferredSizeWidget {
@@ -15,7 +14,7 @@ class CartAppBar extends StatelessWidget with PreferredSizeWidget {
       leading: IconButton(
         onPressed: () {
           Navigator.of(context).
-          pushReplacementNamed(Wrapper.routeName);
+         pop();
         },
         icon: const Icon(Icons.close),
       ),
