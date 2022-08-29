@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 import '../../view_models/categories_view_model.dart';
 import 'widgets/category_appBar_widget.dart';
 import 'widgets/products_grid.dart';
-import 'package:provider/provider.dart';
 
 class CategoryPage extends StatelessWidget {
   static const routeName = '/category';

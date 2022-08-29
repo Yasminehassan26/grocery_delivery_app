@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_delivery_app/services/utils_service.dart';
+import '../../../services/utils_service.dart';
 import 'package:provider/provider.dart';
 
 import '../../../view_models/authentication_view_model.dart';
