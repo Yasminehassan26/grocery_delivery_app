@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_delivery_app/views/widgets/text_widget.dart';
+
+import 'text_widget.dart';
 
 class ElevatedButtonWidget extends StatelessWidget {
   // final String email;
   final String title;
   final Function func;
-  ElevatedButtonWidget(this.title, this.func);
+  const ElevatedButtonWidget(this.title, this.func, {Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 50,
       width: double.infinity,
       child: ElevatedButton(
@@ -17,7 +18,7 @@ class ElevatedButtonWidget extends StatelessWidget {
         },
         style: ElevatedButton.styleFrom(
           elevation: 0,
-          primary: Colors.green,
+          primary: Theme.of(context).primaryColor,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         ),
         child: TextWidget(
